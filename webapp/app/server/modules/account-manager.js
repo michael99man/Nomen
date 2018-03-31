@@ -63,7 +63,6 @@ exports.manualLogin = function(addr, timestamp, callback)
 					callback('invalid-timestamp');
 				}
 			});
-			
 		}
 	});
 }
@@ -77,15 +76,20 @@ exports.addNewAccount = function(newData, timestamp, callback)
 	accounts.findOne({addr:newData.addr}, function(e, o) {
 		if (o){
 			callback('address-taken');
+			console.log('address-taken');
 		}
 		else {
 			accounts.findOne({user:newData.user}, function(e, o) {
 				if (o){
 					callback('username-taken');
+					console.log('username-taken');
+
 				}	else{
 					accounts.findOne({email:newData.email}, function(e, o) {
 						if (o){
 							callback('email-taken');
+							console.log('email-taken');
+
 						}	else{
 							authenticeTimeStamp(newData.addr, timestamp, function(tsAuthenticated) {
 								if(tsAuthenticated) {

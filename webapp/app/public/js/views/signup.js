@@ -6,7 +6,7 @@ $(document).ready(function(){
 	
 	$('#account-form').ajaxForm({
 		beforeSubmit : function(formData, jqForm, options){
-			return av.validateForm();
+			return true // av.validateForm();
 		},
 		success	: function(responseText, status, xhr, $form){
 			if (status == 'success') $('.modal-alert').modal('show');
