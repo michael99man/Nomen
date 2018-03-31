@@ -49,13 +49,13 @@ exports.autoLogin = function(user, pass, callback)
 	});
 }
 
-exports.manualLogin = function(addr, callback)
+exports.manualLogin = function(addr, timestamp, callback)
 {
 	accounts.findOne({addr:addr}, function(e, o) {
 		if (o == null){
 			callback('address-not-registered');
 		}	else{
-			authenticeTimeStamp(addr, function(tsAuthenticated) {
+			authenticeTimeStamp(addr, timestamp, function(tsAuthenticated) {
 				if(tsAuthenticated) {
 					callback(null, o);
 								
@@ -70,7 +70,7 @@ exports.manualLogin = function(addr, callback)
 
 /* record insertion, update & deletion methods */
 
-exports.addNewAccount = function(newData, callback)
+exports.addNewAccount = function(newData, timestamp, callback)
 {
 
 	// find an object o in DB with address, if not taken continue
@@ -87,7 +87,7 @@ exports.addNewAccount = function(newData, callback)
 						if (o){
 							callback('email-taken');
 						}	else{
-							authenticeTimeStamp(newData.addr, function(tsAuthenticated) {
+							authenticeTimeStamp(newData.addr, timestamp, function(tsAuthenticated) {
 								if(tsAuthenticated) {
 									newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
 									accounts.insert(newData, {safe: true}, callback);
@@ -158,9 +158,13 @@ exports.delAllRecords = function(callback)
 	accounts.remove({}, callback); // reset accounts collection for testing //
 }
 
-exports.getEthereumAdress = function(addr) 
+exports.getEthereumAddress = function(addr) 
 {
 	return "foobar";
+}
+
+exports.getTimeStamp = function(addr) {
+	return "this-is-an-encrypted-timestamp";
 }
 
 var getObjectId = function(id)
@@ -188,9 +192,9 @@ var findByMultipleFields = function(a, callback)
 }
 
 // gets and authenticates timestamp 
-var authenticeTimeStamp = function(addr, callback) {
+var authenticeTimeStamp = function(addr, timestamp, callback) {
 
-	// get timestamp from
+	// given timestamp and address, authenticate timeliness
 
 	callback(true);
 }

@@ -24,7 +24,7 @@ module.exports = function(app) {
 	});
 	
 	app.post('/', function(req, res){
-		AM.manualLogin(req.body['user'], function(e, o){
+		AM.manualLogin(AM.getEthereumAddress(), AM.getTimeStamp(), function(e, o){
 			if (!o){
 				res.status(400).send(e);
 			}	else{
@@ -93,7 +93,7 @@ module.exports = function(app) {
 	
 	app.post('/signup', function(req, res){
 		AM.addNewAccount({
-			addr    : AM.getEthereumAdress(),
+			addr    : AM.getEthereumAddress(),
 			name 	: req.body['name'],
 			email 	: req.body['email'],
 			user 	: req.body['user'],
