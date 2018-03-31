@@ -34,21 +34,15 @@ function initWeb3() {
 
 //Initializer for the smart contract.
 function initContract(){
-    $.getJSON('./Registry.json', function(data) {
-        // Get the necessary contract artifact file and instantiate it with truffle-contract
-        var RegistryArtifact = data;
-        contracts.Registry = TruffleContract(RegistryArtifact);
+    // Get the necessary contract artifact file and instantiate it with truffle-contract
+    var RegistryArtifact = abi;
 
-        // Set the provider for our contract
-        contracts.Registry.setProvider(web3Provider);
-        console.log("Initialized contract");
-        
-        contracts.Registry.deployed().then(function(instance) {
-            registryInstance = instance;
-            console.log("Interfaced with contract");
-            hasRegistered(changeField); // update the GUI
-        });
-    });
+    var Registry = web3.eth.contract(abi);
+    registryInstance = Registry.at("0x195dc7c53c6544937bd1b9a08f5e50d244ac26f2");
+    
+    console.log("Interfaced with contract");
+    
+    hasRegistered(changeField);
 }
 
 // registers this name with the registry
@@ -62,53 +56,59 @@ function register(name) {
 
         console.log("Setting name: " + name);
         // register this account with the registry
-        registryInstance.register(name, {from: account}).then(
-            function(registry_success){
-                // this is the transaction ID. Boolean does NOT get returned until it is mined
-                console.log(registry_success);
-                update();
-            }
-        );
+        registryInstance.register(name, {from: account}, function(err, res){
+            // this is the transaction ID. Boolean does NOT get returned until it is mined
+            console.log(res);
+            update();
+        });
     });
 }
 
 // gets the name of this address
 function getName(){ 
     console.log("Checking for: " + web3.eth.accounts[0]);
+    var sender = web3.eth.accounts[0];
+    registryInstance.getName(sender, function(err, res){
+        console.log(res);
+        
+    });
+    
+    /*
+   
     registryInstance.getName.call(web3.eth.accounts[0]).then(
         function(result) {
             var name = web3.toAscii(result);
             console.log(name);
         }
-    );       
+    );     */  
 }
 
 
 // asks the smart contract whether this address has already been registered
 // executes the callback function with a boolean 
 function hasRegistered(callback){
-    registryInstance.getName.call(web3.eth.accounts[0]).then(
-        function(result) {
+    registryInstance.getName(web3.eth.accounts[0], function(err,result){
             var bool = (result != 0);
             callback(bool);
-        }
-    );     
+    });     
 }
 
 // updates the interface after the success/failure of the registration
 // updates local storage too
 function update(){
     console.log("Checking for: " + web3.eth.accounts[0]);
-    registryInstance.getName.call(web3.eth.accounts[0]).then(
-        function(result) {
+    registryInstance.getName(web3.eth.accounts[0], function(err, result) {
             var name = web3.toAscii(result);
             if(result != 0){
                 registeredName = name;
                 console.log("Successfully registered: " + name);
-                callback(name);
+                
+                // DO SOMETHING
+                
+                //callback(name);
             } else {
                 console.log("Has not yet registered");
-                callback(false);
+                //callback(false);
             }
             // CHANGE GUI
         }

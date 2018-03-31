@@ -65,11 +65,11 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b61027a8061001e6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301042a061461005c5780635fd4b08a146100b1578063e1fa8e8414610106575b600080fd5b341561006757600080fd5b610093600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610145565b60405180826000191660001916815260200191505060405180910390f35b34156100bc57600080fd5b6100e8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061015d565b60405180826000191660001916815260200191505060405180910390f35b341561011157600080fd5b61012b6004808035600019169060200190919050506101a5565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915090505481565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000806001026000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205460001916141561024457816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020816000191690555060019050610249565b600090505b9190505600a165627a7a72305820eea1dad3af08e66eaac68919efaa9a74f6accb979aeae255771c7444610629e50029",
-  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301042a061461005c5780635fd4b08a146100b1578063e1fa8e8414610106575b600080fd5b341561006757600080fd5b610093600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610145565b60405180826000191660001916815260200191505060405180910390f35b34156100bc57600080fd5b6100e8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061015d565b60405180826000191660001916815260200191505060405180910390f35b341561011157600080fd5b61012b6004808035600019169060200190919050506101a5565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915090505481565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000806001026000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205460001916141561024457816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020816000191690555060019050610249565b600090505b9190505600a165627a7a72305820eea1dad3af08e66eaac68919efaa9a74f6accb979aeae255771c7444610629e50029",
-  "sourceMap": "26:649:1:-;;;221:34;;;;;;;;26:649;;;;;;",
-  "deployedSourceMap": "26:649:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;578:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;300:191;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:41;;;;;;;;;;;;;;;;;:::o;578:95::-;630:7;655:5;:11;661:4;655:11;;;;;;;;;;;;;;;;648:18;;578:95;;;:::o;300:191::-;348:4;387:1;366:22;;:5;:17;372:10;366:17;;;;;;;;;;;;;;;;:22;;;;363:100;;;423:4;403:5;:17;409:10;403:17;;;;;;;;;;;;;;;:24;;;;;;;448:4;441:11;;;;363:100;479:5;472:12;;300:191;;;;:::o",
-  "source": "pragma solidity ^0.4.21;\n\ncontract Registry {\n    //maps each Ethereum address to a name\n    // CAN USE A STRUCT!!!!! NOTE\n    mapping (address => bytes32) public table;\n        \n    //Constructor doesn't do anything\n    function Registry() public {\n    }\n    \n    /* --- PUBLIC FUNCTIONS --- */\n    function register(bytes32 name) public returns (bool){\n        if(table[msg.sender] == 0){\n            table[msg.sender] = name;\n            return true;\n        }\n        return false;\n    }\n    \n    //returns the name of the nth candidate corresponding to a given address\n    function getName(address addr) public view returns (bytes32){\n        return table[addr];\n    }\n}",
+  "bytecode": "0x6060604052341561000f57600080fd5b61027a8061001e6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301042a061461005c5780635fd4b08a146100b1578063e1fa8e8414610106575b600080fd5b341561006757600080fd5b610093600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610145565b60405180826000191660001916815260200191505060405180910390f35b34156100bc57600080fd5b6100e8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061015d565b60405180826000191660001916815260200191505060405180910390f35b341561011157600080fd5b61012b6004808035600019169060200190919050506101a5565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915090505481565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000806001026000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205460001916141561024457816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020816000191690555060019050610249565b600090505b9190505600a165627a7a72305820d6cd17b5c84a281d50e29e20ca0ce6beb2a8e5738f4cba48c81f82d55e9906d50029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806301042a061461005c5780635fd4b08a146100b1578063e1fa8e8414610106575b600080fd5b341561006757600080fd5b610093600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610145565b60405180826000191660001916815260200191505060405180910390f35b34156100bc57600080fd5b6100e8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061015d565b60405180826000191660001916815260200191505060405180910390f35b341561011157600080fd5b61012b6004808035600019169060200190919050506101a5565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915090505481565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000806001026000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205460001916141561024457816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020816000191690555060019050610249565b600090505b9190505600a165627a7a72305820d6cd17b5c84a281d50e29e20ca0ce6beb2a8e5738f4cba48c81f82d55e9906d50029",
+  "sourceMap": "26:617:1:-;;;221:34;;;;;;;;26:617;;;;;;",
+  "deployedSourceMap": "26:617:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;546:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;300:191;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:41;;;;;;;;;;;;;;;;;:::o;546:95::-;598:7;623:5;:11;629:4;623:11;;;;;;;;;;;;;;;;616:18;;546:95;;;:::o;300:191::-;348:4;387:1;366:22;;:5;:17;372:10;366:17;;;;;;;;;;;;;;;;:22;;;;363:100;;;423:4;403:5;:17;409:10;403:17;;;;;;;;;;;;;;;:24;;;;;;;448:4;441:11;;;;363:100;479:5;472:12;;300:191;;;;:::o",
+  "source": "pragma solidity ^0.4.21;\n\ncontract Registry {\n    //maps each Ethereum address to a name\n    // CAN USE A STRUCT!!!!! NOTE\n    mapping (address => bytes32) public table;\n        \n    //Constructor doesn't do anything\n    function Registry() public {\n    }\n    \n    /* --- PUBLIC FUNCTIONS --- */\n    function register(bytes32 name) public returns (bool){\n        if(table[msg.sender] == 0){\n            table[msg.sender] = name;\n            return true;\n        }\n        return false;\n    }\n    \n    //returns the name of this given address\n    function getName(address addr) public view returns (bytes32){\n        return table[addr];\n    }\n}",
   "sourcePath": "/Users/michaelzman/Documents/workspace/DAS/contracts/Registry.sol",
   "ast": {
     "absolutePath": "/Users/michaelzman/Documents/workspace/DAS/contracts/Registry.sol",
@@ -520,7 +520,7 @@
             "body": {
               "id": 104,
               "nodeType": "Block",
-              "src": "638:35:1",
+              "src": "606:35:1",
               "statements": [
                 {
                   "expression": {
@@ -532,7 +532,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 62,
-                      "src": "655:5:1",
+                      "src": "623:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                         "typeString": "mapping(address => bytes32)"
@@ -546,7 +546,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 95,
-                      "src": "661:4:1",
+                      "src": "629:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -557,7 +557,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "655:11:1",
+                    "src": "623:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -566,7 +566,7 @@
                   "functionReturnParameters": 99,
                   "id": 103,
                   "nodeType": "Return",
-                  "src": "648:18:1"
+                  "src": "616:18:1"
                 }
               ]
             },
@@ -588,7 +588,7 @@
                   "name": "addr",
                   "nodeType": "VariableDeclaration",
                   "scope": 105,
-                  "src": "595:12:1",
+                  "src": "563:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -599,7 +599,7 @@
                     "id": 94,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "595:7:1",
+                    "src": "563:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -609,7 +609,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "594:14:1"
+              "src": "562:14:1"
             },
             "payable": false,
             "returnParameters": {
@@ -622,7 +622,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 105,
-                  "src": "630:7:1",
+                  "src": "598:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -633,7 +633,7 @@
                     "id": 97,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "630:7:1",
+                    "src": "598:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -643,20 +643,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "629:9:1"
+              "src": "597:9:1"
             },
             "scope": 106,
-            "src": "578:95:1",
+            "src": "546:95:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 107,
-        "src": "26:649:1"
+        "src": "26:617:1"
       }
     ],
-    "src": "0:675:1"
+    "src": "0:643:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/michaelzman/Documents/workspace/DAS/contracts/Registry.sol",
@@ -1107,7 +1107,7 @@
             "body": {
               "id": 104,
               "nodeType": "Block",
-              "src": "638:35:1",
+              "src": "606:35:1",
               "statements": [
                 {
                   "expression": {
@@ -1119,7 +1119,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 62,
-                      "src": "655:5:1",
+                      "src": "623:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                         "typeString": "mapping(address => bytes32)"
@@ -1133,7 +1133,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 95,
-                      "src": "661:4:1",
+                      "src": "629:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1144,7 +1144,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "655:11:1",
+                    "src": "623:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1153,7 +1153,7 @@
                   "functionReturnParameters": 99,
                   "id": 103,
                   "nodeType": "Return",
-                  "src": "648:18:1"
+                  "src": "616:18:1"
                 }
               ]
             },
@@ -1175,7 +1175,7 @@
                   "name": "addr",
                   "nodeType": "VariableDeclaration",
                   "scope": 105,
-                  "src": "595:12:1",
+                  "src": "563:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1186,7 +1186,7 @@
                     "id": 94,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "595:7:1",
+                    "src": "563:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1196,7 +1196,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "594:14:1"
+              "src": "562:14:1"
             },
             "payable": false,
             "returnParameters": {
@@ -1209,7 +1209,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 105,
-                  "src": "630:7:1",
+                  "src": "598:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1220,7 +1220,7 @@
                     "id": 97,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "630:7:1",
+                    "src": "598:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1230,20 +1230,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "629:9:1"
+              "src": "597:9:1"
             },
             "scope": 106,
-            "src": "578:95:1",
+            "src": "546:95:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 107,
-        "src": "26:649:1"
+        "src": "26:617:1"
       }
     ],
-    "src": "0:675:1"
+    "src": "0:643:1"
   },
   "compiler": {
     "name": "solc",
@@ -1253,10 +1253,10 @@
     "4": {
       "events": {},
       "links": {},
-      "address": "0xb1956a1ce3a5bff71121c30e664d1a1e521d0760",
-      "transactionHash": "0x43f0fe81519819dabff8f0f93e1b097f0070c5f42fef0d7f22b16ffe0998cd1c"
+      "address": "0x195dc7c53c6544937bd1b9a08f5e50d244ac26f2",
+      "transactionHash": "0xd95f5ffe76aa4f2ce39d54c9e4d5f41e23da28fbf0d706555d0e8a1c90cb206a"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-31T20:40:33.029Z"
+  "updatedAt": "2018-03-31T22:44:02.966Z"
 }

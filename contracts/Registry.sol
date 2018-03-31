@@ -18,7 +18,7 @@ contract Registry {
         return false;
     }
     
-    //returns the name of the nth candidate corresponding to a given address
+    //returns the name of this given address
     function getName(address addr) public view returns (bytes32){
         return table[addr];
     }
