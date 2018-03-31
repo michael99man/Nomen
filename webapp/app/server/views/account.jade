@@ -26,18 +26,6 @@ input(type='hidden', value= user._id)#userId
 					each item in countries
 						option(selected=item.name == user.country)= item.name
 		hr
-		h6#sub2
-		.form-group
-			label.control-label.col-sm-3 Username
-			.col-sm-9
-				input.form-control#user-tf(type='text', name='user', value= user.user).disabled
-
-		.form-group
-			label.control-label.col-sm-3 Password
-			.col-sm-9
-				input.form-control#pass-tf(type='password', name='pass', value='')
-
-		hr
 		.form-buttons
 			button(type='button')#account-form-btn1.btn.btn-default
 			button(type='submit')#account-form-btn2.btn.btn-primary
