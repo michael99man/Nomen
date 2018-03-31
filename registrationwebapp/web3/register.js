@@ -5,6 +5,9 @@
 var web3Provider = null;
 var contracts = {};
 
+// instance of the registry contract
+var registryInstance;
+
 //Basic handler to call initializer for Web3
 function init(args) {
     page = args;
@@ -19,9 +22,10 @@ function initWeb3() {
         web3Provider = web3.currentProvider;
     } else {
         // If no injected web3 instance is detected, fallback to the TestRPC
-        web3Provider = new Web3.providers.HttpProvider('http://localhost:9545');
+        web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545');
     }
     web3 = new Web3(web3Provider);
+    
     return initContract();
 }
 
@@ -34,12 +38,17 @@ function initContract(){
 
         // Set the provider for our contract
         contracts.Registry.setProvider(web3Provider);
+        console.log("Initialized contract");
+        
+        contracts.Registry.deployed().then(function(instance) {
+            registryInstance = instance;
+            console.log("Interfaced with contract")
+        });
     });
 }
 
+// registers this name with the registry
 function register(name) {
-    var registryInstance;
-
     web3.eth.getAccounts(function(error, accounts) {
         if (error) {
             console.log(error);
@@ -47,35 +56,62 @@ function register(name) {
 
         var account = accounts[0];
 
-        contracts.Registry.deployed().then(function(instance) {
-            registryInstance = instance;
-            console.log("Setting name: " + name);
-            // Execute adopt as a transaction by sending account
-            registryInstance.register(name, {from: account}).then(
-                function(registry_success){
-                    console.log(registry_success);
-                }
-            );
-        }).catch(function(err) {
-            console.log(err.message);
-        });
+        console.log("Setting name: " + name);
+        // register this account with the registry
+        registryInstance.register(name, {from: account}).then(
+            function(registry_success){
+                // this is the transaction ID. Boolean does NOT get returned until it is mined
+                console.log(registry_success);
+                update();
+            }
+        );
     });
 }
 
-function getAddr(){ //Tester fucntion; gets the address of the voter
-    var registryInstance;
-    contracts.Registry.deployed().then(
-        function(instance) {
-            registryInstance = instance;
-            console.log("Checking for: " + web3.eth.accounts[0]);
-            registryInstance.getName.call(web3.eth.accounts[0]).then(
-                function(result) {
-                    console.log(result);
-                }
-            )
-        }           
-    );
+// gets the name of this address
+function getName(){ 
+    console.log("Checking for: " + web3.eth.accounts[0]);
+    registryInstance.getName.call(web3.eth.accounts[0]).then(
+        function(result) {
+            var name = web3.toAscii(result);
+            console.log(name);
+        }
+    );       
 }
+
+
+// asks the smart contract whether this address has already been registered
+// executes the callback function with a boolean 
+function hasRegistered(callback){
+    registryInstance.getName.call(web3.eth.accounts[0]).then(
+        function(result) {
+            var bool = (result != 0);
+            callback(bool);
+            console.log("Registered: " + bool);
+        }
+    );     
+}
+
+// updates the interface after the success/failure of the registration
+function update(){
+    console.log("Checking for: " + web3.eth.accounts[0]);
+    registryInstance.getName.call(web3.eth.accounts[0]).then(
+        function(result) {
+            var name = web3.toAscii(result);
+            console.log("Successfully registered: " + name);
+            // CHANGE GUI
+        }
+    );   
+}
+
+
+
+// updates the interface upon load 
+
+
+
+
+
 
 
 

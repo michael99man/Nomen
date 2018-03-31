@@ -13,7 +13,17 @@
 <![endif]-->
 
     </head>
+    
     <body>
+        
+        
+        <form id="registration_form">
+            Name: <input type="text">
+            <input type="submit">
+        </form>
+        
+        <p id="has_registered">You have not been registered yet</p>
+    
         
         <script src="js/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -26,6 +36,7 @@
         <script>
             $(window).load(function() {
                 init("main");
+                hasRegistered(changeField);
             });
         </script>
 
