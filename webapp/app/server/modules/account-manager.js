@@ -55,7 +55,7 @@ exports.manualLogin = function(addr, callback)
 		if (o == null){
 			callback('address-not-registered');
 		}	else{
-			authenticeTimeStamp(newData.addr, function(tsAuthenticated) {
+			authenticeTimeStamp(addr, function(tsAuthenticated) {
 				if(tsAuthenticated) {
 					callback(null, o);
 								
@@ -158,6 +158,11 @@ exports.delAllRecords = function(callback)
 	accounts.remove({}, callback); // reset accounts collection for testing //
 }
 
+exports.getEthereumAdress = function(addr) 
+{
+	return "foobar";
+}
+
 var getObjectId = function(id)
 {
 	return new require('mongodb').ObjectID(id);
@@ -189,3 +194,4 @@ var authenticeTimeStamp = function(addr, callback) {
 
 	callback(true);
 }
+

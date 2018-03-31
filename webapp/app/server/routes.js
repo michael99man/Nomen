@@ -93,7 +93,7 @@ module.exports = function(app) {
 	
 	app.post('/signup', function(req, res){
 		AM.addNewAccount({
-			addr    : AM.getEthereumAdress();
+			addr    : AM.getEthereumAdress(),
 			name 	: req.body['name'],
 			email 	: req.body['email'],
 			user 	: req.body['user'],
