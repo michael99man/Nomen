@@ -7,24 +7,13 @@ block content
 		form.well(id='form-login', method='post')
 			h2 Hello!
 			h6 Please Login To Your Account
-			.form-group
-				label Username
-				input.form-control(type='text', id='user-tf', name='user')
-			.form-group
-				label Password
-				input.form-control(type='password', id='pass-tf', name='pass')
 			.controls
-				button(type='button').btn.btn-default.button-rememember-me
-					span.glyphicon.glyphicon-unchecked.button-rememember-me-glyph
-					| Remember Me
 				button(type='submit').btn.btn-primary.button-sign-in
 					span.glyphicon.glyphicon-lock
 					| Sign In
 			.clearfix
 			hr
 			.btm-links
-				#forgot-password
-					a(href='#') Forgot Your Password?
 				#create-account
 					a(href='/signup') Create An Account
 			.clearfix
