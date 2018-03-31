@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.21;
 
 contract Registry {
     //maps each Ethereum address to a name
