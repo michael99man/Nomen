@@ -76,32 +76,20 @@ exports.addNewAccount = function(newData, timestamp, callback)
 	accounts.findOne({addr:newData.addr}, function(e, o) {
 		if (o){
 			callback('address-taken');
-			console.log('address-taken');
-		}
-		else {
-			accounts.findOne({user:newData.user}, function(e, o) {
+		}	else{
+			accounts.findOne({email:newData.email}, function(e, o) {
 				if (o){
-					callback('username-taken');
-					console.log('username-taken');
-
+					callback('email-taken');
 				}	else{
-					accounts.findOne({email:newData.email}, function(e, o) {
-						if (o){
-							callback('email-taken');
-							console.log('email-taken');
+					authenticeTimeStamp(newData.addr, timestamp, function(tsAuthenticated) {
+						if(tsAuthenticated) {
+							newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+							accounts.insert(newData, {safe: true}, callback);
 
-						}	else{
-							authenticeTimeStamp(newData.addr, timestamp, function(tsAuthenticated) {
-								if(tsAuthenticated) {
-									newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
-									accounts.insert(newData, {safe: true}, callback);
-
-								}
-							});
 						}
 					});
 				}
-			})
+			});
 		}
 	});
 }
