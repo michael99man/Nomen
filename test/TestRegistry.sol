@@ -4,7 +4,7 @@ import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/Registry.sol";
 
-contract TestRegistry{
+contract TestRegistry {
     //gets the address of the contract and initializes a Registry object
     Registry registry = Registry(DeployedAddresses.Registry());
     
