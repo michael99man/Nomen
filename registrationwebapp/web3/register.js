@@ -8,6 +8,9 @@ var contracts = {};
 // instance of the registry contract
 var registryInstance;
 
+// name associated with this Ethereum address
+var registeredName;
+
 //Basic handler to call initializer for Web3
 function init(args) {
     page = args;
@@ -22,7 +25,7 @@ function initWeb3() {
         web3Provider = web3.currentProvider;
     } else {
         // If no injected web3 instance is detected, fallback to the TestRPC
-        web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545');
+        web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:9545');
     }
     web3 = new Web3(web3Provider);
     
@@ -31,7 +34,7 @@ function initWeb3() {
 
 //Initializer for the smart contract.
 function initContract(){
-    $.getJSON('Registry.json', function(data) {
+    $.getJSON('./Registry.json', function(data) {
         // Get the necessary contract artifact file and instantiate it with truffle-contract
         var RegistryArtifact = data;
         contracts.Registry = TruffleContract(RegistryArtifact);
@@ -42,7 +45,8 @@ function initContract(){
         
         contracts.Registry.deployed().then(function(instance) {
             registryInstance = instance;
-            console.log("Interfaced with contract")
+            console.log("Interfaced with contract");
+            hasRegistered(changeField); // update the GUI
         });
     });
 }
@@ -87,18 +91,25 @@ function hasRegistered(callback){
         function(result) {
             var bool = (result != 0);
             callback(bool);
-            console.log("Registered: " + bool);
         }
     );     
 }
 
 // updates the interface after the success/failure of the registration
+// updates local storage too
 function update(){
     console.log("Checking for: " + web3.eth.accounts[0]);
     registryInstance.getName.call(web3.eth.accounts[0]).then(
         function(result) {
             var name = web3.toAscii(result);
-            console.log("Successfully registered: " + name);
+            if(result != 0){
+                registeredName = name;
+                console.log("Successfully registered: " + name);
+                callback(name);
+            } else {
+                console.log("Has not yet registered");
+                callback(false);
+            }
             // CHANGE GUI
         }
     );   
@@ -106,7 +117,14 @@ function update(){
 
 
 
-// updates the interface upon load 
+// updates the interface upon load & after registering
+function changeField(bool){
+    if(!bool){
+        $("#has_registered").text = "You have not registered yet";
+    } else {
+        $("#has_registered").text = "Registered<br>" + web3.eth.accounts[0] + " " + registeredName; 
+    }
+}
 
 
 
