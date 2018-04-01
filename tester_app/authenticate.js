@@ -23,10 +23,10 @@ function signed(){
     var account = web3.eth.accounts[0];
     console.log(account);
     
-    web3.personal.sign(web3.toHex(getEpoch()), account, (err,res) => handle(err,res));
-
+    var plain = getEpoch();
+    console.log("PLAIN: " + plain);
     
-    console.log(foo);
+    web3.personal.sign(web3.toHex(plain), account, (err,res) => handle(err,res));
 }
 
 function getEpoch(){
@@ -40,6 +40,6 @@ function handle(err, msg){
         console.log(err);
         return;
     }
-    
+    console.log("SIGNED: \n" + msg);
     
 }

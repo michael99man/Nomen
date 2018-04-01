@@ -145,6 +145,7 @@ function createSpinny(){
 
 function noSpinny(){
     $("#reg_field").css('display','none');
+    $("#reg_field").css('margin','0');
     $("#registerButton").css('display','none');
     $("#welcome").css('display','none');
     $(".loader").css('display','none');

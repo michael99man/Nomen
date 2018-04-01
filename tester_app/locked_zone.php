@@ -9,18 +9,12 @@ if(isset($_POST["submit"])) {
     die("Bad access");
 }*/
 
-
-require_once '../../../../vendor/autoload.php';
+require "web3.php";
 
 use Web3\Web3;
 use Web3\Contract;
 use Web3\Providers\HttpProvider;
 use Web3\RequestManagers\HttpRequestManager;
-
-$web3 = new Web3(new HttpProvider(new HttpRequestManager('https://rinkeby.infura.io/1qD29qDBBlWdqwnOqZAo')));
-
-// timeout
-$web3 = new Web3(new HttpProvider(new HttpRequestManager('https://rinkeby.infura.io/1qD29qDBBlWdqwnOqZAo', 0.1)));
 
 /**
  * registryAbi
@@ -42,46 +36,15 @@ $signed_timestamp = $_POST["timestamp"];
 
 // call contract function
 $registry->call("getName", "0xbE26180E10b3Ba1242c675c2096775657BaA53f9", function($err, $res){
-    
-    $name = $res[0];
+    $name = $res[""];
+    echo "NAME: " . hex2str($name);
 });
 
-
-
-
-
-
-/* Verification contract */
-
-$verificationAbi = '[{"constant":true,"inputs":[{"name":"msgHash","type":"bytes32"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"}],"name":"RecoverAddress","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"}]';
-$contractAddress = '0x5481c0fe170641bd2e0ff7f04161871829c1902d'; // on Ropsten and Rinkeby
-$contractArtifact = new Contract($web3->provider, $verificationAbi);
-$signAndVerifyContract = $contractArtifact->at($contractAddress);
-
-
-echo $web3->hash('bob');
-
-/*
-function checkSign($err, $signature) {
-	if (!err) {
-
-		$signature = substr($signature, 2);
-		$r = '0x' + substr($signature, 0, 64);
-		$s = '0x' + substr($signature,64, 64);
-		$v = '0x' + substr($signature,128, 2);
-				
-		echo "r: " . $r . "<br>";
-		echo "s: " . $s . "<br>";
-        echo "v: " . $v . "<br>";
-        
-		$signAndVerifyContract->call("RecoverAddress", $web3->hash('Bob'), $v, $r, $s, $verifyHandler, callBack);
-	} else {
-		echo 'Coult not sign message:' + $err;
-	}
+// converts a hex string into an ASCII string
+function hex2str($hex) {
+    $str = '';
+    for($i=0;$i<strlen($hex);$i+=2) $str .= chr(hexdec(substr($hex,$i,2)));
+    return $str;
 }
-
-function callBack($hi){
-    echo $hi + "<br>";
-}*/
 
 ?>
