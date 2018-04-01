@@ -24,8 +24,10 @@ function initWeb3() {
     if (typeof web3 !== 'undefined') {
         web3Provider = web3.currentProvider;
     } else {
-        // If no injected web3 instance is detected, fallback to the TestRPC
-        web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545');
+        // If no injected web3 instance is detected, CAN'T register
+        noSpinny();
+        $("#need_metamask").css('display','block');
+        return null;
     }
     web3 = new Web3(web3Provider);
     
