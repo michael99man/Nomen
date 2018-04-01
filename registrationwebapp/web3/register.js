@@ -104,11 +104,10 @@ function update(registered){
             if(result != 0){
                 registeredName = name;
                 console.log("Successfully registered: " + name);
-                renderPage(true);
+                renderPage();
             } else {
-                renderPage(false);
                 if(registered == true){
-                    setTimeout(function() { update(); }, 5000);
+                    setTimeout(function() { update(true); }, 5000);
                 }
             }
         }
@@ -143,19 +142,15 @@ function noSpinny(){
 }
 
 // after successful registration
-function renderPage(bool) {
-    console.log("RENDERING PAGE: " + bool);
-    if (bool) {
-        noSpinny();
-        $("#title").html("You're registered!")
-        //$("#registration_form").style.display = "none";
-        //$("#not_registered").style.display = "none";
-        $("#confirm_registered").css('display','block');
-        $("#confirm_registered").html("Successfully registered:<br>Address: " + web3.eth.accounts[0] + " <br>Name: " + registeredName);
-                        // change GUI
-    }
-    else {  document.getElementById("confirm_registered").style.display = "none";
-    }
+function renderPage() {
+    console.log("RENDERING SUCCESS");
+    noSpinny();
+    $("#title").html("You're registered!")
+    //$("#registration_form").style.display = "none";
+    //$("#not_registered").style.display = "none";
+    $("#confirm_registered").css('display','block');
+    $("#confirm_registered").html("Successfully registered:<br>Address: " + web3.eth.accounts[0] + " <br>Name: " + registeredName);
+                    // change GUI
 };
 
 
