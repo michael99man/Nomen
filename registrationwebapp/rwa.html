@@ -39,17 +39,14 @@
 							<h1 class="major">NoPass</h1>
 							<p>NoPass's unique use of blockchain technology provides a myriad of benefits over <br />
 								conventional username/password systems.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button">Learn more</a></li>
-							</ul>
 						</div>
 					</section>
 				
 				<!-- One -->
 				<section id="one" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>Get registered now!</h2>
-							<p id="welcome">Register your name on Ethereum. You'll need to have MetaMask installed.</p>
+							<h2 id="title">Get registered now!</h2>
+							<p id="welcome">Register your name on the blockchain. You'll need to have MetaMask installed.</p>
 							<div class="split style1">
 								<section>
 									<form id="registerForm" action='javascript: submit(); return false;'>
@@ -99,9 +96,6 @@
 									<p>Despite the complexity of executing smart contracts on the Ethereum blockchain, NoPass's simple interface makes this powerful technology accessible to anyone.</p>
 								</section>
 							</div>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
 						</div>
 					</section>
 
@@ -113,9 +107,6 @@
 								<div class="inner">
 									<h2>Who we are</h2>
 									<p>We're dedicated Princeton students wanting to change the world with the power of blockchain.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
 								</div>
 							</div>
 						</section>
@@ -163,29 +154,6 @@
                         }
                     }); 
                 });
-                $(document).ready(function() {
-                  //hasRegistered(renderPage());
-                });
-                    
-                function preventProp(){
-                    console.log("Button click");
-                    return false;
-                }
-                    
-                
-                    
-                function attemptRegistration() {
-                  hasRegistered(registrify);
-                }
-                function registrify(bool) {
-                  if (bool) {
-                    renderPage(true);
-                  }
-                  else {
-                    register(PID.value);
-                    renderPage(true);
-                  }
-                }
             </script>
         
         <style>
@@ -198,7 +166,7 @@
                   -webkit-animation: spin 2s linear infinite; /* Safari */
                   animation: spin 2s linear infinite;
                   margin-top: 20px;
-                  margin-bottom: 20px;
+                  margin-bottom: 10px;
                   display: none;
                 }
 

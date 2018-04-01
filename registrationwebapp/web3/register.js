@@ -42,7 +42,8 @@ function initContract(){
     
     console.log("Interfaced with contract");
     
-    hasRegistered(changeField);
+    // update name value if already registered
+    update();
 }
 
 // registers this name with the registry
@@ -128,15 +129,25 @@ function createSpinny(){
     $("#welcome").css('display','none');
 }
 
+function noSpinny(){
+    $("#reg_field").css('display','none');
+    $("#registerButton").css('display','none');
+    $("#welcome").css('display','none');
+    $(".loader").css('display','none');
+    $("#loading").css('display','non');
+}
+
+// after successful registration
 function renderPage(bool) {
     console.log("RENDERING PAGE: " + bool);
     if (bool) {
+        noSpinny();
+        $("#title").html("You're registered!")
         //$("#registration_form").style.display = "none";
         //$("#not_registered").style.display = "none";
         $("#confirm_registered").css('display','block');
-        $("#confirm_registered").innerHTML = "You've registered as: " + registeredName;
+        $("#confirm_registered").html("Successfully registered:<br>Address: " + web3.eth.accounts[0] + " <br>Name: " + registeredName);
                         // change GUI
-                
     }
     else {
         document.getElementById("confirm_registered").style.display = "none";
