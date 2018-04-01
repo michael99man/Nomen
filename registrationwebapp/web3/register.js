@@ -25,7 +25,7 @@ function initWeb3() {
         web3Provider = web3.currentProvider;
     } else {
         // If no injected web3 instance is detected, fallback to the TestRPC
-        web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:9545');
+        web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545');
     }
     web3 = new Web3(web3Provider);
     
@@ -102,9 +102,7 @@ function update(){
             if(result != 0){
                 registeredName = name;
                 console.log("Successfully registered: " + name);
-                
                 // DO SOMETHING
-                
                 //callback(name);
             } else {
                 console.log("Has not yet registered");

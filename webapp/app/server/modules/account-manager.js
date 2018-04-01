@@ -84,6 +84,7 @@ exports.addNewAccount = function(newData, timestamp, callback)
 					authenticeTimeStamp(newData.addr, timestamp, function(tsAuthenticated) {
 						if(tsAuthenticated) {
 							newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+							newData.name = getDASUsername(newData.addr);
 							accounts.insert(newData, {safe: true}, callback);
 
 						}
@@ -100,20 +101,13 @@ exports.updateAccount = function(newData, callback)
 		o.name 		= newData.name;
 		o.email 	= newData.email;
 		o.country 	= newData.country;
-		if (newData.pass == ''){
-			accounts.save(o, {safe: true}, function(e) {
-				if (e) callback(e);
-				else callback(null, o);
-			});
-		}	else{
-			saltAndHash(newData.pass, function(hash){
-				o.pass = hash;
-				accounts.save(o, {safe: true}, function(e) {
-					if (e) callback(e);
-					else callback(null, o);
-				});
-			});
-		}
+
+		
+		accounts.save(o, {safe: true}, function(e) {
+			if (e) callback(e);
+			else callback(null, o);
+		});
+		
 	});
 }
 
@@ -150,9 +144,9 @@ exports.delAllRecords = function(callback)
 	accounts.remove({}, callback); // reset accounts collection for testing //
 }
 
-exports.getEthereumAddress = function(addr) 
+exports.getEthereumAddress = function() 
 {
-	return "foobar";
+	return "address";
 }
 
 exports.getTimeStamp = function(addr) {
@@ -181,6 +175,11 @@ var findByMultipleFields = function(a, callback)
 		if (e) callback(e)
 		else callback(null, results)
 	});
+}
+
+var getDASUsername = function(addr)
+{
+	return "username";
 }
 
 // gets and authenticates timestamp 

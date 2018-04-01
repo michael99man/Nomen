@@ -24,7 +24,11 @@ module.exports = function(app) {
 	});
 	
 	app.post('/', function(req, res){
-		AM.manualLogin(AM.getEthereumAddress(), AM.getTimeStamp(), function(e, o){
+
+		var timestamp = request.header("Timestamp");
+		var addr = request.header("Address");
+
+		AM.manualLogin(addr, timestamp, function(e, o){
 			if (!o){
 				res.status(400).send(e);
 			}	else{
@@ -59,7 +63,6 @@ module.exports = function(app) {
 		}	else{
 			AM.updateAccount({
 				id		: req.session.user._id,
-				name	: req.body['name'],
 				email	: req.body['email'],
 				pass	: req.body['pass'],
 				country	: req.body['country']
@@ -92,12 +95,16 @@ module.exports = function(app) {
 	});
 	
 	app.post('/signup', function(req, res){
+
+		var timestamp = request.header("Timestamp");
+		var addr = request.header("Address");
+
 		AM.addNewAccount({
-			addr    : AM.getEthereumAddress(),
+			addr    : addr,
 			name 	: req.body['name'],
 			email 	: req.body['email'],
 			country : req.body['country']
-		}, AM.getTimeStamp(), function(e){
+		}, timestamp, function(e){
 			if (e){
 				res.status(400).send(e);
 			}	else{
@@ -185,4 +192,16 @@ module.exports = function(app) {
 	
 	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 
+	// passing address and signed timestamp
+
+	app.post('/login', (req, res) {
+		var timestamp = request.header("Timestamp");
+		
+		var addr = request.header("Address");
+	}
+
 };
+
+
+
+

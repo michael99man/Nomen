@@ -21,7 +21,8 @@
     "jade": "1.11.0",
     "moment": "2.10.3",
     "mongodb": "2.0.45",
-    "stylus": "0.52.4"
+    "stylus": "0.52.4",
+    "web3": "^1.0.0-beta.33"
   },
   "engines": {
     "node": "4.2.1"

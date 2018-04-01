@@ -16,12 +16,12 @@ $(document).ready(function(){
 			if (status == 'success') window.location.href = '/home';
 		},
 		error : function(e){
-			lv.showLoginError('Login Failure', 'Please check your username and/or password');
+			lv.showLoginError('Login Failure', 'Metamask failed you (or you are not a registered user)!');
 		}
 	}); 
 	$('#user-tf').focus();
 	
-// login retrieval form via email //
+	// login retrieval form via email //
 	
 	var ev = new EmailValidator();
 	
