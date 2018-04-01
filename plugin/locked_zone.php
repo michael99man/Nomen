@@ -38,18 +38,16 @@ $registryAbi = '[{"constant": true, "inputs": [ { "name": "", "type": "address" 
 $contract = new Contract($web3->provider, $registryAbi);
 $registry = $contract->at("0x195dc7c53c6544937bd1b9a08f5e50d244ac26f2");
 
-
 $result = verify($signed_timestamp, $address, $verificationContract, true);
 
 if($result == false){
     die("FAILED TO AUTHENTICATE");
 }
 
-
 // call contract function
 $registry->call("getName", $address, function($err, $res){
     $name = $res[""];
-    echo "HELLO: " . hex2str($name);
+    processOutput($name);
 });
 
 // converts a hex string into an ASCII string
@@ -57,6 +55,18 @@ function hex2str($hex) {
     $str = '';
     for($i=0;$i<strlen($hex);$i+=2) $str .= chr(hexdec(substr($hex,$i,2)));
     return $str;
+}
+
+function processOutput($name){
+    echo "Welcome to Facebook, " . $name . "<br><br><br>";
+    
+    echo "Don't mind us, we're just running some code on our servers to provide the best possible user experience!<br>";
+    echo "Pipe failure: stdout redirected to user.dashboard<br>";
+    echo "npm install cambridge_analytica<br>";
+    echo "Install successful. Rig election? [y/n]<br>";
+    echo "y<br><br>";
+    echo "cat fakenews.txt | distribute --users=all<br>";
+    echo "";
 }
 
 ?>

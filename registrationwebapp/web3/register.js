@@ -16,7 +16,7 @@ function init(args) {
     page = args;
     console.log("Initializing page: " + page);
     // check for metamask
-    if (typeof web3 !== 'undefined' && (web3.eth.accounts.length == 0))
+    if (typeof web3 !== 'undefined' && (web3.eth.accounts.length != 0))
         return initWeb3();
     else {
         noSpinny();
@@ -145,7 +145,7 @@ function createSpinny(){
 
 function noSpinny(){
     $("#reg_field").css('display','none');
-    $("#reg_field").css('margin','0');
+    $("#registerForm").css('margin','0');
     $("#registerButton").css('display','none');
     $("#welcome").css('display','none');
     $(".loader").css('display','none');
