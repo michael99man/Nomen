@@ -44,9 +44,19 @@ if($result == false){
     die("FAILED TO AUTHENTICATE");
 }
 
+usleep(300000);
+
 // call contract function
 $registry->call("getName", $address, function($err, $res){
-    $name = $res[""];
+    $name = hex2str($res[""]);
+    
+    if($name == ""){
+        $registry->call("getName", $address, function($e, $r){
+            $foo = hex2str($r[""]);
+            processOutput($foo);
+        });
+        return;
+    }
     processOutput($name);
 });
 
@@ -60,13 +70,20 @@ function hex2str($hex) {
 function processOutput($name){
     echo "Welcome to Facebook, " . $name . "<br><br><br>";
     
-    echo "Don't mind us, we're just running some code on our servers to provide the best possible user experience!<br>";
+    echo "Don't mind us, we're just running some code on our servers to provide the best possible user experience!<br><br>";
+    
     echo "Pipe failure: stdout redirected to user.dashboard<br>";
     echo "npm install cambridge_analytica<br>";
     echo "Install successful. Rig election? [y/n]<br>";
     echo "y<br><br>";
     echo "cat fakenews.txt | distribute --users=all<br>";
-    echo "";
+    echo "<br>";
+    echo "cat userData | bzip2 -c > user_out<br>";
+    echo "scp userOut markzuckerberg@ebay.com<br>";
+    echo "ebay_api -startauction -minbidder --file=user_out<br>";
+    echo "<br>";
+    echo "<p><i>If the product is free, you are the product</i> - Unknown<p><br>";
+    echo "Anyways, we hope you enjoy Facebook!";
 }
 
 ?>

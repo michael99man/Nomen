@@ -138,6 +138,7 @@ function changeField(bool){
 function createSpinny(){
     $(".loader").css('display','block');
     $("#reg_field").css('display','none');
+    $("#registerForm").css('margin','0');
     $("#registerButton").css('display','none');
     $("#loading").css('display','block');
     $("#welcome").css('display','none');

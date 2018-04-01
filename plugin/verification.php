@@ -21,28 +21,25 @@ $verificationContract = $contractArtifact->at($contractAddress);
 
 // PARAMS: signature, address (public key of signer), contract location for verification, and debug flag
 function verify($signature, $address, $contract, $DEBUG){
-    echo "SIGNATURE: " . $signature . "<br>";
+    //echo "SIGNATURE: " . $signature . "<br>";
     $signature = substr($signature, 2);
     $r = '0x' . substr($signature, 0, 64);
     $s = '0x' . substr($signature, 64, 64);
     $v = '0x' . substr($signature, 128, 2);
     
-    echo $r . " " . $s . " " . $v . "<br>";
+    //echo $r . " " . $s . " " . $v . "<br>";
     
     if($DEBUG){
         return true;
     }
     
     $contract->call("RecoverAddress", hashMessage("1522574497"), $v, $r, $s, function($err,$res){
-        
         print_r($res);
-        
     });
 }
 
 function hashMessage($msg){
     return hash('sha3-512' , '\x19Ethereum Signed Message:\n' . strlen($msg) . $msg);
 }
-
 
 ?>

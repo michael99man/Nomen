@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" /><meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />
+
+        <script src="authenticate.js"></script>
+        <script src="jquery.min.js"></script>
+        <script>
+            $(window).load(function() {
+                // LOGIN BUTTON
+                $("#nomenButton").click(function(event){ 
+                    login("http://michaelman.net/nomen/plugin/twitter_in.php");
+                    event.preventDefault();
+                }); 
+            });
+        </script>
+
+
+        <link rel="stylesheet" href="https://abs.twimg.com/a/1522314066/css/t1/twitter_core.bundle.css" class="coreCSSBundles">
+        <link rel="stylesheet" class="moreCSSBundles" href="https://abs.twimg.com/a/1522314066/css/t1/twitter_more_1.bundle.css">
+        <link rel="stylesheet" class="moreCSSBundles" href="https://abs.twimg.com/a/1522314066/css/t1/twitter_more_2.bundle.css">
+
+        <title>Twitter. It&#39;s what&#39;s happening.</title>
+        <meta name="robots" content="NOODP">
+        <meta name="description" content="From breaking news and entertainment to sports and politics, get the full story with all the live commentary.">
+
+
+        <link rel="mask-icon" sizes="any" href="https://abs.twimg.com/a/1522314066/icons/favicon.svg" color="#1da1f2">
+        <link rel="apple-touch-icon" href="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" sizes="192x192">
+
+
+        <meta name="swift-page-name" id="swift-page-name" content="front">
+        <meta name="swift-page-section" id="swift-section-name" content="front">
+
+        <link rel="canonical" href="https://twitter.com/">
+        <link rel="alternate" hreflang="x-default" href="https://twitter.com/">
+        <link rel="alternate" hreflang="fr" href="https://twitter.com/?lang=fr"><link rel="alternate" hreflang="en" href="https://twitter.com/?lang=en"><link rel="alternate" hreflang="ar" href="https://twitter.com/?lang=ar"><link rel="alternate" hreflang="ja" href="https://twitter.com/?lang=ja"><link rel="alternate" hreflang="es" href="https://twitter.com/?lang=es"><link rel="alternate" hreflang="de" href="https://twitter.com/?lang=de"><link rel="alternate" hreflang="it" href="https://twitter.com/?lang=it"><link rel="alternate" hreflang="id" href="https://twitter.com/?lang=id"><link rel="alternate" hreflang="pt" href="https://twitter.com/?lang=pt"><link rel="alternate" hreflang="ko" href="https://twitter.com/?lang=ko"><link rel="alternate" hreflang="tr" href="https://twitter.com/?lang=tr"><link rel="alternate" hreflang="ru" href="https://twitter.com/?lang=ru"><link rel="alternate" hreflang="nl" href="https://twitter.com/?lang=nl"><link rel="alternate" hreflang="fil" href="https://twitter.com/?lang=fil"><link rel="alternate" hreflang="ms" href="https://twitter.com/?lang=ms"><link rel="alternate" hreflang="zh-tw" href="https://twitter.com/?lang=zh-tw"><link rel="alternate" hreflang="zh-cn" href="https://twitter.com/?lang=zh-cn"><link rel="alternate" hreflang="hi" href="https://twitter.com/?lang=hi"><link rel="alternate" hreflang="no" href="https://twitter.com/?lang=no"><link rel="alternate" hreflang="sv" href="https://twitter.com/?lang=sv"><link rel="alternate" hreflang="fi" href="https://twitter.com/?lang=fi"><link rel="alternate" hreflang="da" href="https://twitter.com/?lang=da"><link rel="alternate" hreflang="pl" href="https://twitter.com/?lang=pl"><link rel="alternate" hreflang="hu" href="https://twitter.com/?lang=hu"><link rel="alternate" hreflang="fa" href="https://twitter.com/?lang=fa"><link rel="alternate" hreflang="he" href="https://twitter.com/?lang=he"><link rel="alternate" hreflang="ur" href="https://twitter.com/?lang=ur"><link rel="alternate" hreflang="th" href="https://twitter.com/?lang=th"><link rel="alternate" hreflang="uk" href="https://twitter.com/?lang=uk"><link rel="alternate" hreflang="ca" href="https://twitter.com/?lang=ca"><link rel="alternate" hreflang="ga" href="https://twitter.com/?lang=ga"><link rel="alternate" hreflang="el" href="https://twitter.com/?lang=el"><link rel="alternate" hreflang="eu" href="https://twitter.com/?lang=eu"><link rel="alternate" hreflang="cs" href="https://twitter.com/?lang=cs"><link rel="alternate" hreflang="gl" href="https://twitter.com/?lang=gl"><link rel="alternate" hreflang="ro" href="https://twitter.com/?lang=ro"><link rel="alternate" hreflang="hr" href="https://twitter.com/?lang=hr"><link rel="alternate" hreflang="en-gb" href="https://twitter.com/?lang=en-gb"><link rel="alternate" hreflang="vi" href="https://twitter.com/?lang=vi"><link rel="alternate" hreflang="bn" href="https://twitter.com/?lang=bn"><link rel="alternate" hreflang="bg" href="https://twitter.com/?lang=bg"><link rel="alternate" hreflang="sr" href="https://twitter.com/?lang=sr"><link rel="alternate" hreflang="sk" href="https://twitter.com/?lang=sk"><link rel="alternate" hreflang="gu" href="https://twitter.com/?lang=gu"><link rel="alternate" hreflang="mr" href="https://twitter.com/?lang=mr"><link rel="alternate" hreflang="ta" href="https://twitter.com/?lang=ta"><link rel="alternate" hreflang="kn" href="https://twitter.com/?lang=kn">
+
+
+
+
+
+        <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+
+
+
+    </head>
+    <body class="three-col logged-out static-logged-out-home-page" 
+          data-fouc-class-names="swift-loading no-nav-banners"
+          dir="ltr">
+        
+        <a href="#timeline" class="u-hiddenVisually focusable">Skip to content</a>
+
+
+
+
+
+
+
+
+
+
+        <div id="doc" data-at-shortcutkeys="{&quot;Enter&quot;:&quot;Open Tweet details&quot;,&quot;o&quot;:&quot;Expand photo&quot;,&quot;/&quot;:&quot;Search&quot;,&quot;?&quot;:&quot;This menu&quot;,&quot;j&quot;:&quot;Next Tweet&quot;,&quot;k&quot;:&quot;Previous Tweet&quot;,&quot;Space&quot;:&quot;Page down&quot;,&quot;.&quot;:&quot;Load new Tweets&quot;,&quot;gu&quot;:&quot;Go to user\u2026&quot;}" class="">
+            <div class="StaticLoggedOutHomePage">
+                <div class="StaticLoggedOutHomePage-content">
+                    <div class="StaticLoggedOutHomePage-cell StaticLoggedOutHomePage-utilityBlock">
+                        <div class="StaticLoggedOutHomePage-login">
+                            <form action="https://twitter.com/sessions" class="LoginForm js-front-signin" method="post"
+                                  data-component="login_callout"
+                                  data-element="form"
+                                  >
+
+
+                                <h2 class="StaticLoggedOutHomePage-signupSubtitle" style="margin-top:22px; margin-right: 10px;">No phone, email, or username required.</h2>
+                                <img src="nomen.ico" style="width:auto; height:auto; max-width:50px; max-height: 50px; margin-top: 5px; margin-right: 5px;">
+
+                                <input type="button" style="width:150px;" class="EdgeButton EdgeButton--secondary EdgeButton--medium" id="nomenButton" value="Log in with Nomen">
+
+                                <input type="hidden" name="return_to_ssl" value="true">
+
+                                <input type="hidden" name="scribe_log">
+                                <input type="hidden" name="redirect_after_login" value="/">
+                                <input type="hidden" value="bba89a03a76ba1e724104e3ffd98f3c1e7bcfc31" name="authenticity_token">
+                                <input type="hidden" name="ui_metrics" autocomplete="off">
+                            </form>
+                        </div>
+                        <div class="StaticLoggedOutHomePage-signupBlock">
+                            <div class="StaticLoggedOutHomePage-signupHeader">
+                                <span class="Icon Icon--bird"></span>
+                                <a class="StaticLoggedOutHomePage-input StaticLoggedOutHomePage-narrowLoginButton EdgeButton EdgeButton--secondary EdgeButton--small u-floatRight" href="/login">
+                                    Log in
+                                </a>
+                            </div>
+                            <h1 class="StaticLoggedOutHomePage-signupTitle">See what’s happening in the world right now</h1>
+                            <h2 class="StaticLoggedOutHomePage-signupSubtitle">Join Twitter today.</h2>
+                            <form class="StaticLoggedOutHomePage-signupForm" method="POST" action="/account/create">
+                                <input type="hidden" value="bba89a03a76ba1e724104e3ffd98f3c1e7bcfc31" name="authenticity_token" />
+                                <input type="hidden" name="signup_ui_metrics" autocomplete="off">
+                                <input type="hidden" name="m_metrics" autocomplete="off">
+                                <input type="hidden" name="d_metrics" autocomplete="off">
+                                <div class="StaticLoggedOutHomePage-field StaticLoggedOutHomePage-phoneEmail">
+                                    <input type="text" class="StaticLoggedOutHomePage-input text-input email-input" autocomplete="off" name="user[email]" placeholder="Phone or email">
+                                    <span class="StaticLoggedOutHomePage-validationIconContainer">
+                                        <span class="Icon Icon--close"></span>
+                                        <span class="Icon Icon--check"></span>
+                                    </span>
+                                    <div class="StaticLoggedOutHomePage-helpText"></div>
+                                    <div class="StaticLoggedOutHomePage-smsNotice hidden">
+                                        We will text a verification code to this number. Standard SMS, call, or data fees may apply.
+                                    </div>
+                                </div>
+                                <div class="StaticLoggedOutHomePage-field StaticLoggedOutHomePage-password">
+                                    <input type="password" class="StaticLoggedOutHomePage-input text-input" name="user[user_password]" placeholder="Password">
+                                    <span class="StaticLoggedOutHomePage-validationIconContainer">
+                                        <span class="Icon Icon--close"></span>
+                                        <span class="Icon Icon--check"></span>
+                                    </span>
+                                    <div class="StaticLoggedOutHomePage-helpText"></div>
+                                </div>
+                                <input type="hidden" value="" name="context">
+                                <input type="hidden" value="bba89a03a76ba1e724104e3ffd98f3c1e7bcfc31" name="authenticity_token">
+                                <div class="StaticLoggedOutHomePage-getStartedBlock">
+                                    <button type="button" class="EdgeButton EdgeButton--medium EdgeButton--primary StaticLoggedOutHomePage-getStartedButton">
+                                        Get started
+                                    </button>
+                                    <div>
+                                        <p>Have an account? <a href="/login">Log in</a></p>
+                                    </div>
+                                </div>
+                                <div class="StaticLoggedOutHomePage-additionalOptionsBlock hidden">
+                                    <div class="StaticLoggedOutHomePage-field StaticLoggedOutHomePage-fullName">
+                                        <input type="text" class="StaticLoggedOutHomePage-input text-input" autocomplete="off" name="user[name]" placeholder="Full name">
+                                        <span class="StaticLoggedOutHomePage-validationIconContainer">
+                                            <span class="Icon Icon--close"></span>
+                                            <span class="Icon Icon--check"></span>
+                                        </span>
+                                        <div class="StaticLoggedOutHomePage-helpText"></div>
+                                    </div>
+
+                                    <div class="StaticLoggedOutHomePage-personalizationBlock">
+                                        <div class="prompt optin">
+                                            <label class="t1-label use-cookie-personalization">
+                                                <span class="spinner-small loading-spinner"></span>
+                                                <input type="checkbox" class="use-cookie-personalization-field hidden" name="user[use_cookie_personalization]" value="1" />
+                                                <input type="hidden" name="asked_cookie_personalization_setting" value="1" />
+                                                <span>Personalize Twitter based on where you've seen Twitter content on the web. <a class="cookie-personalization-support" href="https://support.twitter.com/articles/20169421" target="_blank" rel="noopener">Learn more</a>.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="advanced-options">
+                                        <div class="SlidedownOptions is-content-hidden">
+                                            <div>
+                                                <a class="SlidedownOptions-headerLink" href="#" role="menu" aria-haspopup="true">Advanced options</a>
+                                            </div>
+                                            <div class="SlidedownOptions-content">
+                                                <div class="prompt optin">
+                                                    <label class="t1-label">
+                                                        <input id="user_discoverable_by_email" name="user[discoverable_by_email]" type="checkbox" value="1" checked>
+                                                        Let others find you by your email address
+                                                        <input type="hidden" name="asked_discoverable_by_email" value="1" />
+                                                    </label>
+                                                    <label class="t1-label">
+                                                        <input type="checkbox" id="user_mobile_discoverable" name="user[discoverable_by_mobile_phone]" checked value="1">
+                                                        Let others find you by your phone number
+                                                        <input type="hidden" name="asked_discoverable_by_mobile_phone" value="1" />
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div></div>
+
+                                    <button type="submit" class="EdgeButton EdgeButton--medium EdgeButton--primary StaticLoggedOutHomePage-signupButton">
+                                        Sign Up
+                                    </button>
+
+                                    <div class="befound">
+                                        <p>By signing up, you agree to the <a href="/tos" class="legal-link" target="_blank">Terms of Service</a> and <a href="/privacy" class="legal-link" target="_blank">Privacy Policy</a>, including <a href="https://support.twitter.com/articles/20170514" class="legal-link" target="_blank">Cookie Use</a>. Others will be able to find you by email or phone number when provided.</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="StaticLoggedOutHomePage-cell StaticLoggedOutHomePage-communicationBlock">
+                        <svg class="twitterIcon-bird" viewBox="0 0 1208 982" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+                            <title>bird</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g id="Final-Horizon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Artboard" transform="translate(-286.000000, -117.000000)" fill-rule="nonzero" fill="#1B95E0">
+                                    <path d="M1493.75308,233.195911 C1449.31783,252.922544 1401.56126,266.207828 1351.43951,272.19627 C1402.61804,241.549536 1441.92034,192.987798 1460.3889,135.116296 C1412.53168,163.498493 1359.49119,184.130942 1303.02874,195.252335 C1257.88897,147.093181 1193.42514,117 1122.16771,117 C962.190754,117 844.636121,266.258151 880.768067,421.202806 C674.896491,410.886582 492.324484,312.253414 370.089808,162.341063 C305.17308,273.705962 336.423691,419.391176 446.731805,493.16476 C406.171431,491.856361 367.925917,480.734968 334.561738,462.165765 C331.844294,576.95263 414.122472,684.342008 533.287442,708.245454 C498.413572,717.706186 460.218381,719.9204 421.368991,712.47259 C452.871217,810.904465 544.358512,882.514158 652.854997,884.52708 C548.686294,966.201382 417.443793,1002.68559 286,987.186091 C395.653915,1057.48739 525.940278,1098.50067 665.838342,1098.50067 C1125.89162,1098.50067 1385.81015,709.956437 1370.10936,361.469352 C1418.52012,326.494836 1460.53987,282.864756 1493.75308,233.195911 Z" id="bird"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="StaticLoggedOutHomePage-communicationContent">
+                            <div class="StaticLoggedOutHomePage-communicationItem">
+                                <span class="Icon Icon--search"></span> Follow your interests.
+                            </div>
+                            <div class="StaticLoggedOutHomePage-communicationItem">
+                                <span class="Icon Icon--people"></span> Hear what people are talking about.
+                            </div>
+                            <div class="StaticLoggedOutHomePage-communicationItem">
+                                <span class="Icon Icon--reply"></span> Join the conversation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <noscript>
+                    <div class="front-warning">
+                        <h3>Twitter.com makes heavy use of JavaScript</h3>
+                        <p>If you cannot enable it in your browser's preferences, you may have a better experience on our <a href="http://m.twitter.com" rel="noopener">mobile site</a>.</p>
+                    </div>
+                </noscript>
+
+                <div class="front-warning" id="front-no-cookies-warn">
+                    <h3>Twitter.com makes heavy use of browser cookies</h3>
+                    <p>Please enable cookies in your browser preferences before signing in.</p>
+                </div>
+                <div class="StreamsFooter StreamsFooter--fixed">
+                    <ul class="StreamsFooter-list u-cf">
+                        <li class="StreamsFooter-item"><a href="/about" rel="noopener">About</a></li>
+                        <li class="StreamsFooter-item"><a href="//support.twitter.com" rel="noopener">Help Center</a></li>
+                        <li class="StreamsFooter-item"><a href="https://blog.twitter.com" rel="noopener">Blog</a></li>
+                        <li class="StreamsFooter-item"><a href="http://status.twitter.com" rel="noopener">Status</a></li>
+                        <li class="StreamsFooter-item"><a href="https://about.twitter.com/careers" rel="noopener">Jobs</a></li>
+                        <li class="StreamsFooter-item"><a href="/tos" rel="noopener">Terms</a></li>
+                        <li class="StreamsFooter-item"><a href="/privacy" rel="noopener">Privacy Policy</a></li>
+                        <li class="StreamsFooter-item"><a href="//support.twitter.com/articles/20170514" rel="noopener">Cookies</a></li>
+                        <li class="StreamsFooter-item"><a href="//support.twitter.com/articles/20170451" rel="noopener">Ads info</a></li>
+                        <li class="StreamsFooter-item"><a href="//about.twitter.com/press/brand-assets" rel="noopener">Brand</a></li>
+                        <li class="StreamsFooter-item"><a href="https://about.twitter.com/products" rel="noopener">Apps</a></li>
+                        <li class="StreamsFooter-item"><a href="//ads.twitter.com/?ref=gl-tw-tw-twitter-advertise" rel="noopener">Advertise</a></li>
+                        <li class="StreamsFooter-item"><a href="https://marketing.twitter.com" rel="noopener">Marketing</a></li>
+                        <li class="StreamsFooter-item"><a href="https://business.twitter.com" rel="noopener">Businesses</a></li>
+                        <li class="StreamsFooter-item"><a href="//dev.twitter.com" rel="noopener">Developers</a></li>
+                        <li class="StreamsFooter-item"><a href="/i/directory/profiles" rel="noopener">Directory</a></li>
+                        <li class="StreamsFooter-item"><a href="/settings/personalization" rel="noopener">Settings</a></li>
+                        <li class="StreamsFooter-item StreamsFooter-copyright">&copy; 2018 Twitter</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="alert-messages hidden" id="message-drawer">
+            <div class="message ">
+                <div class="message-inside">
+                    <span class="message-text"></span>
+                    <a role="button" class="Icon Icon--close Icon--medium dismiss" href="#">
+                        <span class="visuallyhidden">Dismiss</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="gallery-overlay"></div>
+        <div class="Gallery with-tweet">
+            <style class="Gallery-styles"></style>
+            <div class="Gallery-closeTarget"></div>
+            <div class="Gallery-content">
+                <button type="button" class="modal-btn modal-close modal-close-fixed js-close">
+                    <span class="Icon Icon--close Icon--large">
+                        <span class="visuallyhidden">Close</span>
+                    </span>
+                </button>
+
+                <div class="Gallery-media"></div>
+                <div class="GalleryNav GalleryNav--prev">
+                    <span class="GalleryNav-handle GalleryNav-handle--prev">
+                        <span class="Icon Icon--caretLeft Icon--large">
+                            <span class="u-hiddenVisually">
+                                Previous
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <div class="GalleryNav GalleryNav--next">
+                    <span class="GalleryNav-handle GalleryNav-handle--next">
+                        <span class="Icon Icon--caretRight Icon--large">
+                            <span class="u-hiddenVisually">
+                                Next
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <div class="GalleryTweet"></div>
+            </div>
+        </div>
+
+
+        <div class="modal-overlay"></div>
+
+        <div id="profile-hover-container"></div>
+
+
+        <div id="goto-user-dialog" class="modal-container">
+            <div class="modal modal-small draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Go to a person's profile</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="modal-inner">
+                            <form class="t1-form goto-user-form">
+                                <input class="input-block username-input" type="text" placeholder="Start typing a name to jump to a profile" aria-label="User">
+
+
+
+                                <div role="listbox" class="dropdown-menu typeahead">
+                                    <div aria-hidden="true" class="dropdown-caret">
+                                        <div class="caret-outer"></div>
+                                        <div class="caret-inner"></div>
+                                    </div>
+                                    <div role="presentation" class="dropdown-inner js-typeahead-results">
+                                        <div role="presentation" class="typeahead-saved-searches">
+                                            <h3 id="saved-searches-heading" class="typeahead-category-title saved-searches-title">Saved searches</h3>
+                                            <ul role="presentation" class="typeahead-items saved-searches-list">
+
+                                                <li role="presentation" class="typeahead-item typeahead-saved-search-item">
+                                                    <span class="Icon Icon--close" aria-hidden="true"><span class="visuallyhidden">Remove</span></span>
+                                                    <a role="option" aria-describedby="saved-searches-heading" class="js-nav" href="" data-search-query="" data-query-source="" data-ds="saved_search" tabindex="-1"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <ul role="presentation" class="typeahead-items typeahead-topics">
+
+                                            <li role="presentation" class="typeahead-item typeahead-topic-item">
+                                                <a role="option" class="js-nav" href="" data-search-query="" data-query-source="typeahead_click" data-ds="topics" tabindex="-1"></a>
+                                            </li>
+                                        </ul>
+                                        <ul role="presentation" class="typeahead-items typeahead-accounts social-context js-typeahead-accounts">
+
+                                            <li role="presentation" data-user-id="" data-user-screenname="" data-remote="true" data-score="" class="typeahead-item typeahead-account-item js-selectable">
+
+                                                <a role="option" class="js-nav" data-query-source="typeahead_click" data-search-query="" data-ds="account">
+                                                    <div class="js-selectable typeahead-in-conversation hidden">
+                                                        <span class="Icon Icon--follower Icon--small"></span>
+                                                        <span class="typeahead-in-conversation-text">In this conversation</span>
+                                                    </div>
+                                                    <img class="avatar size32" alt="">
+                                                    <span class="typeahead-user-item-info account-group">
+                                                        <span class="fullname"></span><span class="UserBadges"><span class="Icon Icon--verified js-verified hidden"><span class="u-hiddenVisually">Verified account</span></span><span class="Icon Icon--protected js-protected hidden"><span class="u-hiddenVisually">Protected Tweets</span></span></span><span class="UserNameBreak">&nbsp;</span><span class="username u-dir" dir="ltr">@<b></b></span>
+                                                    </span>
+                                                    <span class="typeahead-social-context"></span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="js-selectable typeahead-accounts-shortcut js-shortcut"><a role="option" class="js-nav" href="" data-search-query="" data-query-source="typeahead_click" data-shortcut="true" data-ds="account_search"></a></li>
+                                        </ul>
+
+                                        <ul role="presentation" class="typeahead-items typeahead-trend-locations-list">
+
+                                            <li role="presentation" class="typeahead-item typeahead-trend-locations-item"><a role="option" class="js-nav" href="" data-ds="trend_location" data-search-query="" tabindex="-1"></a></li>
+                                        </ul>
+
+                                        <div role="presentation" class="typeahead-user-select">
+                                            <div role="presentation" class="typeahead-empty-suggestions">
+                                                Suggested users
+                                            </div>
+                                            <ul role="presentation" class="typeahead-items typeahead-selected js-typeahead-selected">
+
+                                                <li role="presentation" data-user-id="" data-user-screenname="" data-remote="true" data-score="" class="typeahead-item typeahead-selected-item js-selectable">
+
+                                                    <a role="option" class="js-nav" data-query-source="typeahead_click" data-search-query="" data-ds="account">
+                                                        <img class="avatar size32" alt="">
+                                                        <span class="typeahead-user-item-info account-group">
+                                                            <span class="select-status deselect-user js-deselect-user Icon Icon--check"></span>
+                                                            <span class="select-status select-disabled Icon Icon--unfollow"></span>
+                                                            <span class="fullname"></span><span class="UserBadges"><span class="Icon Icon--verified js-verified hidden"><span class="u-hiddenVisually">Verified account</span></span><span class="Icon Icon--protected js-protected hidden"><span class="u-hiddenVisually">Protected Tweets</span></span></span><span class="UserNameBreak">&nbsp;</span><span class="username u-dir" dir="ltr">@<b></b></span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="typeahead-selected-end"></li>
+                                            </ul>
+
+                                            <ul role="presentation" class="typeahead-items typeahead-accounts js-typeahead-accounts">
+
+                                                <li role="presentation" data-user-id="" data-user-screenname="" data-remote="true" data-score="" class="typeahead-item typeahead-account-item js-selectable">
+
+                                                    <a role="option" class="js-nav" data-query-source="typeahead_click" data-search-query="" data-ds="account">
+                                                        <img class="avatar size32" alt="">
+                                                        <span class="typeahead-user-item-info account-group">
+                                                            <span class="select-status deselect-user js-deselect-user Icon Icon--check"></span>
+                                                            <span class="select-status select-disabled Icon Icon--unfollow"></span>
+                                                            <span class="fullname"></span><span class="UserBadges"><span class="Icon Icon--verified js-verified hidden"><span class="u-hiddenVisually">Verified account</span></span><span class="Icon Icon--protected js-protected hidden"><span class="u-hiddenVisually">Protected Tweets</span></span></span><span class="UserNameBreak">&nbsp;</span><span class="username u-dir" dir="ltr">@<b></b></span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="typeahead-accounts-end"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div role="presentation" class="typeahead-dm-conversations">
+                                            <ul role="presentation" class="typeahead-items typeahead-dm-conversation-items">
+                                                <li role="presentation" class="typeahead-item typeahead-dm-conversation-item">
+                                                    <a role="option" tabindex="-1"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="quick-promote-dialog" class="QuickPromoteDialog modal-container">
+            <div class="modal draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close modal-close-fixed js-close">
+                        <span class="Icon Icon--close Icon--large">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Promote this Tweet</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="quick-promote-view-container">
+                            <div class="media">
+                                <iframe
+                                        class="quick-promote-iframe js-initial-focus"
+                                        scrolling="no"
+                                        frameborder="0"
+                                        src="">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="block-user-dialog" class="modal-container">
+            <div class="modal draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Block</h3>
+                    </div>
+
+                    <div class="tweet-loading">
+                        <div class="spinner-bigger"></div>
+                    </div>
+
+                    <div class="modal-body modal-tweet"></div>
+
+                    <div class="modal-footer">
+                        <button class="EdgeButton EdgeButton--tertiary cancel-action js-close">Cancel</button>
+                        <button class="EdgeButton EdgeButton--danger block-action">Block</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="geo-disabled-dropdown">
+            <div tabindex="-1">
+                <div class="dropdown-caret">
+                    <span class="caret-outer"></span>
+                    <span class="caret-inner"></span>
+                </div>
+                <ul>
+                    <li class="geo-not-enabled-yet">
+                        <h2>Tweet with a location</h2>
+                        <p>
+                            You can add location information to your Tweets, such as your city or precise location, from the web and via third-party applications. You always have the option to delete your Tweet location history.
+                            <a href="http://support.twitter.com/forums/26810/entries/78525" target="_blank" rel="noopener">Learn more</a>
+                        </p>
+                        <div>
+                            <button type="button" class="geo-turn-on EdgeButton EdgeButton--primary">Turn on</button>
+                            <button type="button" class="geo-not-now EdgeButton EdgeButton--secondary">Not now</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="geo-enabled-dropdown">
+            <div tabindex="-1">
+                <div class="dropdown-caret">
+                    <span class="caret-outer"></span>
+                    <span class="caret-inner"></span>
+                </div>
+                <div>
+                    <div class="geo-query-location">
+                        <input class="GeoSearch-queryInput" type="text" autocomplete="off" placeholder="Search for a neighborhood or city">
+                        <span class="Icon Icon--search"></span>
+                    </div>
+                    <div class="geo-dropdown-status"></div>
+                    <ul class="GeoSearch-dropdownMenu"></ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="list-membership-dialog" class="modal-container">
+            <div class="modal modal-small draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Your lists</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-membership-content"></div>
+                        <span class="spinner lists-spinner" title="Loading&hellip;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="list-operations-dialog" class="modal-container">
+            <div class="modal modal-medium draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Create a new list</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-editor">
+                            <div class="field">
+                                <label class="t1-label" for="list-name">List name</label>
+                                <input id="list-name" type="text" class="text" name="name" value="" />
+                            </div>
+                            <hr/>
+
+                            <div class="field">
+                                <label class="t1-label" for="list-description">Description</label>
+                                <textarea id="list-description" name="description"></textarea>
+                                <span class="help-text">Under 100 characters, optional</span>
+                            </div>
+                            <hr/>
+
+                            <fieldset class="field">
+                                <legend class="t1-legend">Privacy</legend>
+                                <div class="options">
+                                    <label class="t1-label" for="list-public-radio">
+                                        <input class="radio" type="radio" name="mode" id="list-public-radio" value="public" checked="checked"  />
+                                        <b>Public</b> &middot; Anyone can follow this list
+                                    </label>
+                                    <label class="t1-label" for="list-private-radio">
+                                        <input class="radio" type="radio" name="mode" id="list-private-radio" value="private"  />
+                                        <b>Private</b> &middot; Only you can access this list
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <hr/>
+
+                            <div class="list-editor-save">
+                                <button type="button" class="EdgeButton EdgeButton--secondary update-list-button" data-list-id="">Save list</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-popup-dialog" class="modal-container">
+            <div class="modal draggable">
+                <div class="modal-content clearfix">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+
+                    <div class="modal-header">
+                        <h3 class="modal-title"></h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="tweet-loading">
+                            <div class="spinner-bigger"></div>
+                        </div>
+
+                        <div class="activity-popup-dialog-content modal-tweet clearfix"></div>
+                        <div class="loading">
+                            <span class="spinner-bigger"></span>
+                        </div>
+                        <div class="activity-popup-dialog-users clearfix"></div>
+                        <div class="activity-popup-dialog-footer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="copy-link-to-tweet-dialog" class="modal-container">
+            <div class="modal modal-medium draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Copy link to Tweet</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="copy-link-to-tweet-container">
+                            <label class="t1-label">
+                                <p class="copy-link-to-tweet-instructions">Here's the URL for this Tweet. Copy it to easily share with friends.</p>
+                                <textarea class="link-to-tweet-destination js-initial-focus u-dir" dir="ltr" readonly></textarea>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="embed-tweet-dialog" class="modal-container">
+            <div class="modal modal-medium draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title embed-tweet-title">Embed this Tweet</h3>
+                        <h3 class="modal-title embed-video-title">Embed this Video</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-code-container">
+                            <p class="embed-tweet-instructions">Add this Tweet to your website by copying the code below. <a href="https://dev.twitter.com/web/embedded-tweets" target="_blank" rel="noopener">Learn more</a></p>
+                            <p class="embed-video-instructions">Add this video to your website by copying the code below. <a href="https://dev.twitter.com/web/embedded-tweets" target="_blank" rel="noopener">Learn more</a></p>
+                            <form class="t1-form">
+
+                                <div class="embed-destination-wrapper">
+                                    <div class="embed-overlay embed-overlay-spinner"><div class="embed-overlay-content"></div></div>
+                                    <div class="embed-overlay embed-overlay-error">
+                                        <p class="embed-overlay-content">Hmm, there was a problem reaching the server. <button type="button" class="btn-link retry-embed">Try again?</button></p>
+                                    </div>
+                                    <textarea class="embed-destination js-initial-focus"></textarea>
+                                    <div class="embed-options">
+                                        <div class="embed-include-parent-tweet">
+                                            <label class="t1-label" for="include-parent-tweet">
+                                                <input type="checkbox" id="include-parent-tweet" class="include-parent-tweet" checked>
+                                                Include parent Tweet
+                                            </label>
+                                        </div>
+                                        <div class="embed-include-card">
+                                            <label class="t1-label" for="include-card">
+                                                <input type="checkbox" id="include-card" class="include-card" checked>
+                                                Include media
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="embed-tweet-description">By embedding Twitter content in your website or app, you are agreeing to the Twitter <a href="https://dev.twitter.com/overview/terms/agreement" rel="noopener">Developer Agreement</a> and <a href="https://dev.twitter.com/overview/terms/policy" rel="noopener">Developer Policy</a>.</p>
+                            <h3 class="embed-preview-header">Preview</h3>
+                            <div class="embed-preview">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="why-this-ad-dialog" class="modal-container why-this-ad-dialog">
+            <div class="modal modal-large draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title why-this-ad-title">Why you're seeing this ad</h3>
+                    </div>
+                    <div class="why-this-ad-content">
+                        <div class="why-this-ad-spinner">
+                            <div class="spinner-bigger"></div>
+                        </div>
+                        <iframe id="why-this-ad-frame" class="hidden" aria-hidden="true" scrolling="auto">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="login-dialog" class="LoginDialog modal-container u-textCenter">
+            <div class="modal modal-large draggable">
+                <div class="LoginDialog-content modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Log in to Twitter</h3>
+                    </div>
+                    <div class="LoginDialog-body modal-body">
+                        <div class="LoginDialog-bird">
+                            <span class="Icon Icon--bird Icon--large"></span>
+                        </div>
+                        <div class="LoginDialog-form">
+                            <form action="https://twitter.com/sessions" class="LoginForm js-front-signin" method="post"
+                                  data-component="dialog"
+                                  data-element="login"
+                                  >
+
+
+                                <div class="LoginForm-rememberForgot">
+                                    <label>
+                                        <input type="checkbox" value="1" name="remember_me" checked="checked">
+                                        <span>Remember me</span>
+                                    </label>
+                                    <span class="separator">&middot;</span>
+                                    <a class="forgot" href="/account/begin_password_reset" rel="noopener">Forgot password?</a>
+                                </div>
+
+                                <input type="submit" class="EdgeButton EdgeButton--primary EdgeButton--medium submit js-submit" value="Log in">
+
+                                <input type="hidden" name="return_to_ssl" value="true">
+
+                                <input type="hidden" name="scribe_log">
+                                <input type="hidden" name="redirect_after_login" value="/">
+                                <input type="hidden" value="bba89a03a76ba1e724104e3ffd98f3c1e7bcfc31" name="authenticity_token">
+                                <input type="hidden" name="ui_metrics" autocomplete="off">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="LoginDialog-footer modal-footer u-textCenter">
+                        Don't have an account? <a class="LoginDialog-signupLink" href="https://twitter.com/signup" rel="noopener">Sign up &raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="signup-dialog" class="SignupDialog modal-container u-textCenter">
+            <div class="modal modal-large draggable">
+                <div class="SignupDialog-content modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Sign up for Twitter</h3>
+                    </div>
+                    <div class="SignupDialog-body modal-body">
+                        <div class="SignupDialog-icon">
+                            <span class="Icon Icon--bird Icon--extraLarge"></span>
+                        </div>
+                        <h2 class="SignupDialog-heading">Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.</h2>
+                        <div class="SignupDialog-form">
+                            <div class="signup SignupForm
+                                        ">
+                                <a href="https://twitter.com/signup" role="button" class="EdgeButton EdgeButton--large EdgeButton--primary SignupForm-submit u-block js-signup "
+                                   data-component="dialog"
+                                   data-element="signup"
+                                   >Sign up</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SignupDialog-footer modal-footer u-textCenter">
+                        Have an account? <a class="SignupDialog-signinLink" href="/login" rel="noopener">Log in &raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sms-codes-dialog" class="modal-container">
+            <div class="modal modal-medium draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Two-way (sending and receiving) short codes:</h3>
+                    </div>
+                    <div class="modal-body">
+
+                        <table id="sms_codes" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Country</th>
+                                    <th>Code</th>
+                                    <th>For customers of</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>United States</td>
+                                    <td>40404</td>
+                                    <td>(any)</td>
+                                </tr>
+                                <tr>
+                                    <td>Canada</td>
+                                    <td>21212</td>
+                                    <td>(any)</td>
+                                </tr>
+                                <tr>
+                                    <td>United Kingdom</td>
+                                    <td>86444</td>
+                                    <td>Vodafone, Orange, 3, O2</td>
+                                </tr>
+                                <tr>
+                                    <td>Brazil</td>
+                                    <td>40404</td>
+                                    <td>Nextel, TIM</td>
+                                </tr>
+                                <tr>
+                                    <td>Haiti</td>
+                                    <td>40404</td>
+                                    <td>Digicel, Voila</td>
+                                </tr>
+                                <tr>
+                                    <td>Ireland</td>
+                                    <td>51210</td>
+                                    <td>Vodafone, O2</td>
+                                </tr>
+                                <tr>
+                                    <td>India</td>
+                                    <td>53000</td>
+                                    <td>Bharti Airtel, Videocon, Reliance</td>
+                                </tr>
+                                <tr>
+                                    <td>Indonesia</td>
+                                    <td>89887</td>
+                                    <td>AXIS, 3, Telkomsel, Indosat, XL Axiata</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Italy</td>
+                                    <td>4880804</td>
+                                    <td>Wind</td>
+                                </tr>
+                                <tr>
+                                    <td>3424486444</td>
+                                    <td>Vodafone</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">
+                                        &raquo; <a class="js-initial-focus" target="_blank" href="http://support.twitter.com/articles/14226-how-to-find-your-twitter-short-code-or-long-code" rel="noopener">See SMS short codes for other countries</a>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="leadgen-confirm-dialog" class="modal-container">
+            <div class="modal draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close js-close">
+                        <span class="Icon Icon--close Icon--medium">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">Confirmation</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="leadgen-card-container">
+                            <div class="media">
+                                <iframe
+                                        class="cards2-promotion-iframe"
+                                        scrolling="no"
+                                        frameborder="0"
+                                        src="">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="js-macaw-cards-iframe-container" data-card-name="promotion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="auth-webview-dialog" class="AuthWebViewDialog modal-container">
+            <div class="modal draggable">
+                <div class="modal-content">
+                    <button type="button" class="modal-btn modal-close modal-close-fixed js-close">
+                        <span class="Icon Icon--close Icon--large">
+                            <span class="visuallyhidden">Close</span>
+                        </span>
+                    </button>
+
+                    <div class="modal-header">
+                        <h3 class="modal-title">&nbsp;</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="auth-webview-view-container">
+                            <div class="media">
+                                <iframe
+                                        class="auth-webview-card-iframe js-initial-focus"
+                                        scrolling="no"
+                                        frameborder="0"
+                                        width="590px"
+                                        height="500px"
+                                        src="">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="promptbird-modal-prompt" class="modal-container">
+            <div class="modal">
+
+                <button type="button" class="modal-btn js-promptDismiss modal-close js-close">
+                    <span class="Icon Icon--close Icon--medium">
+                        <span class="visuallyhidden">Close</span>
+                    </span>
+                </button>
+                <div class="modal-content"></div>
+            </div>
+        </div>
+
+
+        <div id="ui-walkthrough-dialog" class="modal-container UIWalkthrough">
+            <div class="UIWalkthrough-clickBlocker"></div>
+            <div class="modal modal-small">
+                <div class="UIWalkthrough-caret"></div>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="UIWalkthrough-header">
+                            <span class="UIWalkthrough-stepProgress"></span>
+                            <button class="UIWalkthrough-skip js-close">
+                                Skip all
+                            </button>
+                        </div>
+
+
+
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--welcome">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--home UIWalkthrough-icon"></span>
+                                Welcome home!
+                            </h3>
+                            <p class="UIWalkthrough-message">This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.</p>
+                        </div>
+
+
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--unfollow">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--smileRating1Fill UIWalkthrough-icon"></span>
+                                Tweets not working for you?
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                Hover over the profile pic and click the Following button to unfollow any account.
+                            </p>
+                        </div>
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--like">
+
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--heart UIWalkthrough-icon"></span>
+                                Say a lot with a little
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+                            </p>
+                        </div>
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--retweet">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--retweet UIWalkthrough-icon"></span>
+                                Spread the word
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+                            </p>
+                        </div>
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--reply">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--reply UIWalkthrough-icon"></span>
+                                Join the conversation
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+                            </p>
+                        </div>
+
+
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--trends">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--discover UIWalkthrough-icon"></span>
+                                Learn the latest
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                Get instant insight into what people are talking about now.
+                            </p>
+                        </div>
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--wtf">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--follow UIWalkthrough-icon"></span>
+                                Get more of what you love
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                Follow more accounts to get instant updates about topics you care about.
+                            </p>
+                        </div>
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--search">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--search UIWalkthrough-icon"></span>
+                                Find what's happening
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                See the latest conversations about any topic instantly.
+                            </p>
+                        </div>
+
+                        <div class="UIWalkthrough-step UIWalkthrough-step--moments">
+                            <h3 class="UIWalkthrough-title">
+                                <span class="Icon Icon--lightning UIWalkthrough-icon"></span>
+                                Never miss a Moment
+                            </h3>
+                            <p class="UIWalkthrough-message">
+                                Catch up instantly on the best stories happening as they unfold.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="EdgeButton EdgeButton--tertiary u-floatLeft plain-btn UIWalkthrough-button js-previous-step">Back</button>
+                        <button class="EdgeButton EdgeButton--secondary UIWalkthrough-button js-next-step js-initial-focus">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="create-custom-timeline-dialog" class="modal-container"></div>
+        <div id="edit-custom-timeline-dialog" class="modal-container"></div>
+        <div id="curate-dialog" class="modal-container"></div>
+        <div id="media-edit-dialog" class="modal-container"></div>
+
+
+        <div class="PermalinkOverlay PermalinkOverlay-with-background " id="permalink-overlay">
+            <div class="PermalinkProfile-dismiss modal-close-fixed">
+                <span class="Icon Icon--close"></span>
+            </div>
+            <button class="PermalinkOverlay-next PermalinkOverlay-button u-posFixed js-next" type="button">
+                <span class="Icon Icon--caretLeft Icon--large"></span>
+                <span class="u-hiddenVisually">Next Tweet from user</span>
+            </button>
+            <div class="PermalinkOverlay-modal">
+                <div class="PermalinkOverlay-spinnerContainer u-hidden">
+                    <div class="PermalinkOverlay-spinner"></div>
+                </div>
+                <div class="PermalinkOverlay-content">
+                    <div class="PermalinkOverlay-body"
+                         >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

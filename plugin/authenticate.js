@@ -19,12 +19,15 @@ function init(){
     web3 = new Web3(web3Provider);
 }
 
+var destination;
+
 // asks user for signature approval, then posts this data
-function login(){
+function login(dest){
     console.log("LOGGING IN");
     var account = web3.eth.accounts[0];
     console.log(account);
     
+    destination = dest;
     var plain = getEpoch();
     console.log("PLAIN: " + plain);
     console.log("WAITING FOR SIGNING APPROVAL");
@@ -56,7 +59,7 @@ function post(err, signed, account){
         $form.appendTo('body').submit();
     }
     
-    util.post("http://michaelman.net/nomen/plugin/locked_zone.php", {timestamp: signed, address: account});
+    util.post(destination, {timestamp: signed, address: account});
 }
 
 
