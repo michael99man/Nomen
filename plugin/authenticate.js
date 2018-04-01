@@ -19,27 +19,44 @@ function init(){
     web3 = new Web3(web3Provider);
 }
 
-function signed(){
+// asks user for signature approval, then posts this data
+function login(){
+    console.log("LOGGING IN");
     var account = web3.eth.accounts[0];
     console.log(account);
     
     var plain = getEpoch();
     console.log("PLAIN: " + plain);
-    
-    web3.personal.sign(web3.toHex(plain), account, (err,res) => handle(err,res));
+    console.log("WAITING FOR SIGNING APPROVAL");
+    web3.personal.sign(web3.toHex(plain), account, (err,res) => post(err,res, account));
 }
+
 
 function getEpoch(){
     return Math.round((new Date()).getTime() / 1000);
 }
 
-
-function handle(err, msg){
-    if(err!=null){
-        // MOST LIKELY, COULDN'T SIGN
-        console.log(err);
-        return;
-    }
-    console.log("SIGNED: \n" + msg);
+// posts data to server
+function post(err, signed, account){
+    var util = {};
     
+    
+    util.post = function(url, fields) {
+        var $form = $('<form>', {
+            action: url,
+            method: 'post'
+        });
+        $.each(fields, function(key, val) {
+             $('<input>').attr({
+                 type: "hidden",
+                 name: key,
+                 value: val
+             }).appendTo($form);
+        });
+        $form.appendTo('body').submit();
+    }
+    
+    util.post("http://michaelman.net/nomen/plugin/locked_zone.php", {timestamp: signed, address: account});
 }
+
+
