@@ -21,6 +21,7 @@ function init(args) {
     else {
         noSpinny();
         $("#need_metamask").css('display','block');
+        $("#metamast_img").css('display','block');
         return null;
     }
 }
