@@ -16,7 +16,7 @@ function init(args) {
     page = args;
     console.log("Initializing page: " + page);
     // check for metamask
-    if (typeof web3 !== 'undefined')
+    if (typeof web3 !== 'undefined' && (web3.eth.accounts.length == 0))
         return initWeb3();
     else {
         noSpinny();
