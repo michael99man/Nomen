@@ -43,7 +43,7 @@ function initContract(){
     console.log("Interfaced with contract");
     
     // update name value if already registered
-    update();
+    update(false);
 }
 
 // registers this name with the registry
@@ -57,8 +57,10 @@ function register(name) {
         // register this account with the registry
         registryInstance.register(name, {from: account}, function(err, res){
             // this is the transaction ID. Boolean does NOT get returned until it is mined
+            
             console.log(res);
-            update();
+            console.log("SENT TRANSACTION");
+            update(true);
         });
         createSpinny();
     });
@@ -95,7 +97,7 @@ function hasRegistered(callback){
 
 // updates the interface after the success/failure of the registration
 // updates local storage too
-function update(){
+function update(registered){
     console.log("Checking for: " + web3.eth.accounts[0]);
     registryInstance.getName(web3.eth.accounts[0], function(err, result) {
             var name = web3.toAscii(result);
@@ -105,6 +107,9 @@ function update(){
                 renderPage(true);
             } else {
                 renderPage(false);
+                if(registered == true){
+                    setTimeout(function() { update(); }, 5000);
+                }
             }
         }
     );   
@@ -149,8 +154,7 @@ function renderPage(bool) {
         $("#confirm_registered").html("Successfully registered:<br>Address: " + web3.eth.accounts[0] + " <br>Name: " + registeredName);
                         // change GUI
     }
-    else {
-        document.getElementById("confirm_registered").style.display = "none";
+    else {  document.getElementById("confirm_registered").style.display = "none";
     }
 };
 
