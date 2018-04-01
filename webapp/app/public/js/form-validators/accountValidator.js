@@ -34,9 +34,15 @@ function AccountValidator()
 
 }
 
-AccountValidator.prototype.showInvalidEmail = function()
+AccountValidator.prototype.showInvalidAddress = function()
 {
 	this.controlGroups[1].addClass('error');
+	this.showErrors(['That Ethereum address is already in use.']);
+}
+
+AccountValidator.prototype.showInvalidEmail = function()
+{
+	this.controlGroups[2].addClass('error');
 	this.showErrors(['That email address is already in use.']);
 }
 

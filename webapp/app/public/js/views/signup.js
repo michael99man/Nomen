@@ -13,10 +13,10 @@ $(document).ready(function(){
 		},
 		error : function(e){
 			if (e.responseText == 'email-taken'){
-			    av.showInvalidEmail();
-			}	else if (e.responseText == 'username-taken'){
-			    av.showInvalidUserName();
-			}
+			    	av.showInvalidEmail();
+				}	else if (e.responseText == 'address-taken'){
+			    	av.showInvalidAddress();
+				}	
 		}
 	});
 	$('#name-tf').focus();
