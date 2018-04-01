@@ -17,11 +17,12 @@
         
         
         <form id="registration_form">
-            Name: <input type="text">
-            <input type="submit">
+            Public ID (eg. Name): <input id="PID" type="text">
+            <button type="button" onclick="attemptRegistration()">Register</button>
         </form>
         
-        <p id="has_registered">You have not been registered yet</p>
+        <p id="not_registered">You have not been registered yet!</p>
+        <p id="confirm_registered"></p>
     
         
         <script src="js/jquery.min.js"></script>
@@ -32,11 +33,36 @@
         <script src="web3/register.js"></script>
         
 
-
         <script>
             $(window).load(function() {
-                init("main");
+            //    init("main");
             });
+            $(document).ready(function() {
+              hasRegistered(renderPage());
+            });
+            function attemptRegistration() {
+              hasRegistered(registrify);
+            };
+            function registrify(bool) {
+              if (bool) {
+                renderPage(true);
+              }
+              else {
+                register(PID.value);
+                renderPage(true);
+              }
+            }
+            function renderPage(bool) {
+              if (bool) {
+                document.getElementById("registration_form").style.display = "none";
+                document.getElementById("not_registered").style.display = "none";
+                document.getElementById("confirm_registered").style.display = "block";
+                document.getElementById("confirm_registered").innerHTML = "temp";
+              }
+              else {
+                document.getElementById("confirm_registered").style.display = "none";
+              }
+            };
         </script>
 
     </body>
