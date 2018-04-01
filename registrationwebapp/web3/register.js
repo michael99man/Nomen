@@ -15,7 +15,15 @@ var registeredName;
 function init(args) {
     page = args;
     console.log("Initializing page: " + page);
-    return initWeb3();
+    // check for metamask
+    if (typeof web3 !== 'undefined')
+        return initWeb3();
+    else {
+        noSpinny();
+        $("#need_metamask").css('display','block');
+        $("#metamast_img").css('display','block');
+        return null;
+    }
 }
 
 //Initializer for Web3. Also calls the initializer for the smart contract.
