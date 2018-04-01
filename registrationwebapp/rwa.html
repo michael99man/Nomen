@@ -48,24 +48,24 @@
 				<!-- One -->
 				<section id="one" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>Get started</h2>
-							<p>Why wait? It's as simple as putting in your name.</p>
+							<h2>Get registered now!</h2>
+							<p id="welcome">Register your name on Ethereum. You'll need to have MetaMask installed.</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
-										<div class="field">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" placeholder="Name"/>
+									<form id="registerForm" action='javascript: submit(); return false;'>
+										<div class="field" id="reg_field">
+											<input type="text" name="name" id="name" placeholder="Insert your name here"/>
 										</div>
-										<div id="myProgress">
-											<div id="myBar"></div>
-										</div>
+                                        <p id="loading" style="display: none;">Registering you on the Ethereum blockchain. You may need to approve this transaction in MetaMask.</p>
+                                        <div class="loader"></div>
+                                        <p id="confirm_registered" style="display:none;">Hello</p>
 										<br>
-										<button onclick="move()">Submit</button>
+										<button type=button id="registerButton" style="font-size:14px;">Register</button>
 										<!--<ul class="actions">
 											<li><a href="" class="button">Submit</a></li>
-										</ul> -->
+										</ul>
 										</div>
+                                        -->
 									</form>
 								</section>
 							</div>
@@ -133,7 +133,7 @@
 					</ul>
 				</div>
 			</footer>
-
+        
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -148,5 +148,70 @@
         	<script src="dependencies/truffle-contract.js"></script>
         	<script src="web3/abi.js"></script>
         	<script src="web3/register.js"></script>
+        
+        
+        
+                <script>
+                $(window).load(function() {
+                    init("main");
+                    //SUBMIT FORM
+                    $("#registerButton").click(function(event){ 
+                        var name = $("#name")[0].value;
+                        if(name != ""){
+                            console.log("Name: " + name);
+                            register(name);
+                        }
+                    }); 
+                });
+                $(document).ready(function() {
+                  //hasRegistered(renderPage());
+                });
+                    
+                function preventProp(){
+                    console.log("Button click");
+                    return false;
+                }
+                    
+                
+                    
+                function attemptRegistration() {
+                  hasRegistered(registrify);
+                }
+                function registrify(bool) {
+                  if (bool) {
+                    renderPage(true);
+                  }
+                  else {
+                    register(PID.value);
+                    renderPage(true);
+                  }
+                }
+            </script>
+        
+        <style>
+            .loader {
+                  border: 16px solid #f3f3f3;
+                  border-radius: 50%;
+                  border-top: 16px solid #3498db;
+                  width: 120px;
+                  height: 120px;
+                  -webkit-animation: spin 2s linear infinite; /* Safari */
+                  animation: spin 2s linear infinite;
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+                  display: none;
+                }
+
+                /* Safari */
+                @-webkit-keyframes spin {
+                  0% { -webkit-transform: rotate(0deg); }
+                  100% { -webkit-transform: rotate(360deg); }
+                }
+
+                @keyframes spin {
+                  0% { transform: rotate(0deg); }
+                  100% { transform: rotate(360deg); }
+                }
+        </style>
 	</body>
 </html>

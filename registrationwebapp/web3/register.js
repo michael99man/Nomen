@@ -51,9 +51,7 @@ function register(name) {
         if (error) {
             console.log(error);
         }
-
         var account = accounts[0];
-
         console.log("Setting name: " + name);
         // register this account with the registry
         registryInstance.register(name, {from: account}, function(err, res){
@@ -61,6 +59,7 @@ function register(name) {
             console.log(res);
             update();
         });
+        createSpinny();
     });
 }
 
@@ -102,13 +101,10 @@ function update(){
             if(result != 0){
                 registeredName = name;
                 console.log("Successfully registered: " + name);
-                // DO SOMETHING
-                //callback(name);
+                renderPage(true);
             } else {
-                console.log("Has not yet registered");
-                //callback(false);
+                renderPage(false);
             }
-            // CHANGE GUI
         }
     );   
 }
@@ -124,10 +120,27 @@ function changeField(bool){
     }
 }
 
+function createSpinny(){
+    $(".loader").css('display','block');
+    $("#reg_field").css('display','none');
+    $("#registerButton").css('display','none');
+    $("#loading").css('display','block');
+    $("#welcome").css('display','none');
+}
 
-
-
-
-
+function renderPage(bool) {
+    console.log("RENDERING PAGE: " + bool);
+    if (bool) {
+        //$("#registration_form").style.display = "none";
+        //$("#not_registered").style.display = "none";
+        $("#confirm_registered").css('display','block');
+        $("#confirm_registered").innerHTML = "You've registered as: " + registeredName;
+                        // change GUI
+                
+    }
+    else {
+        document.getElementById("confirm_registered").style.display = "none";
+    }
+};
 
 
