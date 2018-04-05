@@ -1,5 +1,5 @@
 # nomen
-*WINNER: Decentralize everything: Best use of Ark blockchain challenge - Sponsored by ARK.io*
+WINNER: *Decentralize everything: Best use of Ark blockchain challenge - Sponsored by ARK.io*
 
 A decentralized digital authentication framework built on the Ethereum blockchain.
 
