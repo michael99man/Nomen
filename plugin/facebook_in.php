@@ -44,19 +44,11 @@ if($result == false){
     die("FAILED TO AUTHENTICATE");
 }
 
-usleep(300000);
+usleep(1000000);
 
 // call contract function
 $registry->call("getName", $address, function($err, $res){
     $name = hex2str($res[""]);
-    
-    if($name == ""){
-        $registry->call("getName", $address, function($e, $r){
-            $foo = hex2str($r[""]);
-            processOutput($foo);
-        });
-        return;
-    }
     processOutput($name);
 });
 
